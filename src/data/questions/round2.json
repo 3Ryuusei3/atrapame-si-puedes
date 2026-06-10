@@ -1,0 +1,95 @@
+{
+  "round": 2,
+  "sets": [
+    {
+      "playerOrder": 1,
+      "questions": [
+        { "id": "r2-p1-q1", "text": "Capital de España" },
+        { "id": "r2-p1-q2", "text": "Planeta rojo" },
+        { "id": "r2-p1-q3", "text": "Año del descubrimiento de América" },
+        { "id": "r2-p1-q4", "text": "Elemento químico del oro" },
+        { "id": "r2-p1-q5", "text": "Autor de Don Quijote" }
+      ],
+      "answers": [
+        { "id": "r2-p1-a1", "text": "Madrid", "matchesQuestionId": "r2-p1-q1" },
+        { "id": "r2-p1-a2", "text": "Marte", "matchesQuestionId": "r2-p1-q2" },
+        { "id": "r2-p1-a3", "text": "1492", "matchesQuestionId": "r2-p1-q3" },
+        { "id": "r2-p1-a4", "text": "Au", "matchesQuestionId": "r2-p1-q4" },
+        { "id": "r2-p1-a5", "text": "Cervantes", "matchesQuestionId": "r2-p1-q5" },
+        { "id": "r2-p1-fake", "text": "Lisboa", "matchesQuestionId": null }
+      ]
+    },
+    {
+      "playerOrder": 2,
+      "questions": [
+        { "id": "r2-p2-q1", "text": "Océano más grande" },
+        { "id": "r2-p2-q2", "text": "Moneda de Japón" },
+        { "id": "r2-p2-q3", "text": "Órgano que bombea sangre" },
+        { "id": "r2-p2-q4", "text": "País de la Torre Eiffel" },
+        { "id": "r2-p2-q5", "text": "Número de lados de un hexágono" }
+      ],
+      "answers": [
+        { "id": "r2-p2-a1", "text": "Pacífico", "matchesQuestionId": "r2-p2-q1" },
+        { "id": "r2-p2-a2", "text": "Yen", "matchesQuestionId": "r2-p2-q2" },
+        { "id": "r2-p2-a3", "text": "Corazón", "matchesQuestionId": "r2-p2-q3" },
+        { "id": "r2-p2-a4", "text": "Francia", "matchesQuestionId": "r2-p2-q4" },
+        { "id": "r2-p2-a5", "text": "6", "matchesQuestionId": "r2-p2-q5" },
+        { "id": "r2-p2-fake", "text": "Atlántico Sur", "matchesQuestionId": null }
+      ]
+    },
+    {
+      "playerOrder": 3,
+      "questions": [
+        { "id": "r2-p3-q1", "text": "Animal más rápido del mundo" },
+        { "id": "r2-p3-q2", "text": "Idioma más hablado" },
+        { "id": "r2-p3-q3", "text": "Fórmula del agua" },
+        { "id": "r2-p3-q4", "text": "Capital de Italia" },
+        { "id": "r2-p3-q5", "text": "Instrumento de cuerda" }
+      ],
+      "answers": [
+        { "id": "r2-p3-a1", "text": "Guepardo", "matchesQuestionId": "r2-p3-q1" },
+        { "id": "r2-p3-a2", "text": "Inglés", "matchesQuestionId": "r2-p3-q2" },
+        { "id": "r2-p3-a3", "text": "H2O", "matchesQuestionId": "r2-p3-q3" },
+        { "id": "r2-p3-a4", "text": "Roma", "matchesQuestionId": "r2-p3-q4" },
+        { "id": "r2-p3-a5", "text": "Guitarra", "matchesQuestionId": "r2-p3-q5" },
+        { "id": "r2-p3-fake", "text": "Elefante", "matchesQuestionId": null }
+      ]
+    },
+    {
+      "playerOrder": 4,
+      "questions": [
+        { "id": "r2-p4-q1", "text": "Metal líquido a temperatura ambiente" },
+        { "id": "r2-p4-q2", "text": "País del samba" },
+        { "id": "r2-p4-q3", "text": "Rey de los dioses griegos" },
+        { "id": "r2-p4-q4", "text": "Días de una semana" },
+        { "id": "r2-p4-q5", "text": "Color del cielo despejado" }
+      ],
+      "answers": [
+        { "id": "r2-p4-a1", "text": "Mercurio", "matchesQuestionId": "r2-p4-q1" },
+        { "id": "r2-p4-a2", "text": "Brasil", "matchesQuestionId": "r2-p4-q2" },
+        { "id": "r2-p4-a3", "text": "Zeus", "matchesQuestionId": "r2-p4-q3" },
+        { "id": "r2-p4-a4", "text": "7", "matchesQuestionId": "r2-p4-q4" },
+        { "id": "r2-p4-a5", "text": "Azul", "matchesQuestionId": "r2-p4-q5" },
+        { "id": "r2-p4-fake", "text": "Hierro", "matchesQuestionId": null }
+      ]
+    },
+    {
+      "playerOrder": 5,
+      "questions": [
+        { "id": "r2-p5-q1", "text": "Satélite natural de la Tierra" },
+        { "id": "r2-p5-q2", "text": "Capital de Alemania" },
+        { "id": "r2-p5-q3", "text": "Deporte con canasta" },
+        { "id": "r2-p5-q4", "text": "Año de la Revolución francesa" },
+        { "id": "r2-p5-q5", "text": "Gas que respiramos" }
+      ],
+      "answers": [
+        { "id": "r2-p5-a1", "text": "Luna", "matchesQuestionId": "r2-p5-q1" },
+        { "id": "r2-p5-a2", "text": "Berlín", "matchesQuestionId": "r2-p5-q2" },
+        { "id": "r2-p5-a3", "text": "Baloncesto", "matchesQuestionId": "r2-p5-q3" },
+        { "id": "r2-p5-a4", "text": "1789", "matchesQuestionId": "r2-p5-q4" },
+        { "id": "r2-p5-a5", "text": "Oxígeno", "matchesQuestionId": "r2-p5-q5" },
+        { "id": "r2-p5-fake", "text": "Marte", "matchesQuestionId": null }
+      ]
+    }
+  ]
+}

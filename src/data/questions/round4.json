@@ -1,0 +1,29 @@
+{
+  "round": 4,
+  "questions": [
+    {
+      "id": "r4-001",
+      "text": "La Gran Muralla China es visible desde la Luna.",
+      "options": [
+        { "id": "a", "text": "Verdadero", "isCorrect": false },
+        { "id": "b", "text": "Falso", "isCorrect": true }
+      ]
+    },
+    {
+      "id": "r4-002",
+      "text": "El agua hierve a 100°C al nivel del mar.",
+      "options": [
+        { "id": "a", "text": "Verdadero", "isCorrect": true },
+        { "id": "b", "text": "Falso", "isCorrect": false }
+      ]
+    },
+    {
+      "id": "r4-003",
+      "text": "Los murciélagos son ciegos.",
+      "options": [
+        { "id": "a", "text": "Verdadero", "isCorrect": false },
+        { "id": "b", "text": "Falso", "isCorrect": true }
+      ]
+    }
+  ]
+}

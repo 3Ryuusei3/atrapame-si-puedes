@@ -1,0 +1,953 @@
+[
+  {
+    "round": 1,
+    "sets": [
+      {
+        "playerOrder": 1,
+        "questions": [
+          {
+            "id": "r1-001",
+            "text": "¿Qué productor argentino de gorra y gafas lo peta con sus 'Music Sessions'?",
+            "answer": "Bizarrap"
+          },
+          {
+            "id": "r1-002",
+            "text": "En su famosa sesión 52, ¿qué cantante canario nos hizo cantar a todos 'Quédate'?",
+            "answer": "Quevedo"
+          },
+          {
+            "id": "r1-003",
+            "text": "¿A qué gran rival literario dedicó Quevedo su poema 'Érase un hombre a una nariz pegado'?",
+            "answer": "Luis de Góngora"
+          },
+          {
+            "id": "r1-004",
+            "text": "Góngora nació en Córdoba. ¿Qué imponente ciudad palatina construyó Abderramán III a sus afueras?",
+            "answer": "Medina Azahara"
+          },
+          {
+            "id": "r1-005",
+            "text": "El azahar es la flor del naranjo. En botánica, ¿cómo se llama el proceso de una semilla al desarrollarse en planta?",
+            "answer": "Germinación"
+          },
+          {
+            "id": "r1-006",
+            "text": "Para crecer, las plantas convierten la luz solar en energía. ¿Cómo se llama este proceso?",
+            "answer": "Fotosíntesis"
+          },
+          {
+            "id": "r1-007",
+            "text": "La fotosíntesis requiere luz. ¿Qué inventor estadounidense patentó la primera bombilla incandescente?",
+            "answer": "Thomas Edison"
+          }
+        ]
+      },
+      {
+        "playerOrder": 2,
+        "questions": [
+          {
+            "id": "r1-008",
+            "text": "¿Qué plataforma de streaming de la gran 'N' roja hace sonar un 'Tudum' al inicio?",
+            "answer": "Netflix"
+          },
+          {
+            "id": "r1-009",
+            "text": "¿En qué exitosa serie coreana de Netflix los endeudados juegan a juegos infantiles mortales?",
+            "answer": "El juego del calamar"
+          },
+          {
+            "id": "r1-010",
+            "text": "El calamar es la presa de Moby Dick. ¿Qué tipo de gran cetáceo dentado es este personaje?",
+            "answer": "Un cachalote"
+          },
+          {
+            "id": "r1-011",
+            "text": "El cachalote caza a gran profundidad. ¿Qué nombre recibe el fondo oceánico situado entre 4.000 y 6.000 metros?",
+            "answer": "Zona abisal"
+          },
+          {
+            "id": "r1-012",
+            "text": "¿Cómo se llama la fosa oceánica más profunda de la Tierra, situada en el Pacífico?",
+            "answer": "La fosa de las Marianas"
+          },
+          {
+            "id": "r1-013",
+            "text": "Las Islas Marianas dan nombre a la fosa. ¿Qué navegante portugués al servicio de España llegó primero a ellas?",
+            "answer": "Fernando de Magallanes"
+          },
+          {
+            "id": "r1-014",
+            "text": "Tras la muerte de Magallanes, ¿qué marino español completó la primera vuelta al mundo?",
+            "answer": "Juan Sebastián Elcano"
+          }
+        ]
+      },
+      {
+        "playerOrder": 3,
+        "questions": [
+          {
+            "id": "r1-015",
+            "text": "¿Qué famoso streamer vasco organiza 'La Velada del Año'?",
+            "answer": "Ibai Llanos"
+          },
+          {
+            "id": "r1-016",
+            "text": "Ibai empezó jugando shooters. ¿Qué mítica saga bélica incluye títulos como Black Ops o Warzone?",
+            "answer": "Call of Duty"
+          },
+          {
+            "id": "r1-017",
+            "text": "Al disparar un arma se produce una fuerte sacudida. ¿Cómo se llama este movimiento hacia atrás que empieza por R?",
+            "answer": "Retroceso"
+          },
+          {
+            "id": "r1-018",
+            "text": "Hablando de retroceso, ¿qué planeta interior del sistema solar gira en sentido 'retrógrado' o inverso a la Tierra?",
+            "answer": "Venus"
+          },
+          {
+            "id": "r1-019",
+            "text": "Venus es la diosa romana del amor. ¿Quién es su equivalente griega, nacida de la espuma del mar?",
+            "answer": "Afrodita"
+          },
+          {
+            "id": "r1-020",
+            "text": "Afrodita nació en el Mediterráneo. ¿Cuál es la isla más grande de Grecia?",
+            "answer": "Creta"
+          },
+          {
+            "id": "r1-021",
+            "text": "En Creta, el rey Minos encerró a una bestia mitad hombre y mitad toro. ¿Cómo se llamaba este monstruo?",
+            "answer": "El Minotauro"
+          }
+        ]
+      },
+      {
+        "playerOrder": 4,
+        "questions": [
+          {
+            "id": "r1-022",
+            "text": "¿En qué año ganó la Selección Española su primer Mundial de fútbol en Sudáfrica?",
+            "answer": "2010"
+          },
+          {
+            "id": "r1-023",
+            "text": "Ese mismo año, 2010, ¿qué famosa red social de fotografía y 'stories' fue lanzada al mercado?",
+            "answer": "Instagram"
+          },
+          {
+            "id": "r1-024",
+            "text": "¿Cómo se apellida la famosa influencer española María, que tiene su propio documental en Prime Video?",
+            "answer": "Pombo (María Pombo)"
+          },
+          {
+            "id": "r1-025",
+            "text": "Su apellido significa 'paloma' en portugués. ¿Qué rama lleva una paloma en el pico como símbolo de paz?",
+            "answer": "Rama de olivo"
+          },
+          {
+            "id": "r1-026",
+            "text": "El fruto del olivo es la aceituna. ¿Qué glándula de nuestro cerebro, del tamaño de una aceituna, regula el sistema endocrino?",
+            "answer": "La hipófisis (o glándula pituitaria)"
+          },
+          {
+            "id": "r1-027",
+            "text": "La hipófisis está en el cerebro. ¿Cuál es la enfermedad cerebral neurodegenerativa más común, que causa pérdida de memoria?",
+            "answer": "Alzheimer"
+          },
+          {
+            "id": "r1-028",
+            "text": "Hablando de pérdida de memoria, ¿cómo se llama el pez azul con amnesia de la película 'Buscando a Nemo'?",
+            "answer": "Dory"
+          }
+        ]
+      },
+      {
+        "playerOrder": 5,
+        "questions": [
+          {
+            "id": "r1-029",
+            "text": "¿Qué mítico transatlántico se hundió en su viaje inaugural en 1912 tras chocar con un iceberg?",
+            "answer": "El Titanic"
+          },
+          {
+            "id": "r1-030",
+            "text": "¿Qué oscarizado cineasta dirigió la exitosa película 'Titanic' en 1997?",
+            "answer": "James Cameron"
+          },
+          {
+            "id": "r1-031",
+            "text": "Cameron también dirigió 'Terminator'. ¿Qué icónico actor y político interpretó a este ciborg?",
+            "answer": "Arnold Schwarzenegger"
+          },
+          {
+            "id": "r1-032",
+            "text": "Schwarzenegger dejó temporalmente el cine por la política. ¿De qué estado americano fue gobernador?",
+            "answer": "California"
+          },
+          {
+            "id": "r1-033",
+            "text": "En California destaca San Francisco. ¿Cómo se llama su famoso puente colgante rojo anaranjado?",
+            "answer": "El Golden Gate"
+          },
+          {
+            "id": "r1-034",
+            "text": "El Golden Gate es una maravilla arquitectónica. En la antigüedad, ¿qué imperio construyó el acueducto de Segovia?",
+            "answer": "El Imperio Romano (Los romanos)"
+          },
+          {
+            "id": "r1-035",
+            "text": "Durante el Imperio Romano, ¿qué término latino se utilizaba para llamar a la península ibérica?",
+            "answer": "Hispania"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "round": 2,
+    "sets": [
+      {
+        "playerOrder": 1,
+        "questions": [
+          {
+            "id": "r2-p1-q1",
+            "text": "¿En qué serie unos adolescentes de Hawkins luchan contra el Demogorgon?"
+          },
+          {
+            "id": "r2-p1-q2",
+            "text": "¿Qué serie española popularizó a unos atracadores con monos rojos y máscaras de Dalí?"
+          },
+          {
+            "id": "r2-p1-q3",
+            "text": "¿Qué serie protagonizada por Zendaya narra la dura vida de unos adolescentes con traumas?"
+          },
+          {
+            "id": "r2-p1-q4",
+            "text": "¿Qué serie muestra a los superhéroes corruptos de la corporación Vought?"
+          },
+          {
+            "id": "r2-p1-q5",
+            "text": "¿En qué serie de HBO la tóxica familia Roy pelea por su imperio mediático?"
+          }
+        ],
+        "answers": [
+          {
+            "id": "r2-p1-a1",
+            "text": "Stranger Things",
+            "matchesQuestionId": "r2-p1-q1"
+          },
+          {
+            "id": "r2-p1-a2",
+            "text": "La Casa de Papel",
+            "matchesQuestionId": "r2-p1-q2"
+          },
+          {
+            "id": "r2-p1-a3",
+            "text": "Euphoria",
+            "matchesQuestionId": "r2-p1-q3"
+          },
+          {
+            "id": "r2-p1-a4",
+            "text": "The Boys",
+            "matchesQuestionId": "r2-p1-q4"
+          },
+          {
+            "id": "r2-p1-a5",
+            "text": "Succession",
+            "matchesQuestionId": "r2-p1-q5"
+          },
+          {
+            "id": "r2-p1-fake",
+            "text": "Peaky Blinders",
+            "matchesQuestionId": null
+          }
+        ]
+      },
+      {
+        "playerOrder": 2,
+        "questions": [
+          {
+            "id": "r2-p2-q1",
+            "text": "¿Qué anglicismo usamos para referirnos a desaparecer sin dar explicaciones tras unas citas?"
+          },
+          {
+            "id": "r2-p2-q2",
+            "text": "¿Con qué término de dos palabras señalamos una actitud tóxica o de alerta en una relación?"
+          },
+          {
+            "id": "r2-p2-q3",
+            "text": "¿Qué anglicismo usamos para decir que algo da muchísima vergüenza ajena?"
+          },
+          {
+            "id": "r2-p2-q4",
+            "text": "¿Qué verbo usamos cuando deseamos que dos personas formen una pareja romántica?"
+          },
+          {
+            "id": "r2-p2-q5",
+            "text": "¿Qué siglas de videojuegos describen a alguien que actúa en piloto automático y sin personalidad?"
+          }
+        ],
+        "answers": [
+          {
+            "id": "r2-p2-a1",
+            "text": "Ghosting",
+            "matchesQuestionId": "r2-p2-q1"
+          },
+          {
+            "id": "r2-p2-a2",
+            "text": "Red Flag",
+            "matchesQuestionId": "r2-p2-q2"
+          },
+          {
+            "id": "r2-p2-a3",
+            "text": "Cringe",
+            "matchesQuestionId": "r2-p2-q3"
+          },
+          {
+            "id": "r2-p2-a4",
+            "text": "Shipear",
+            "matchesQuestionId": "r2-p2-q4"
+          },
+          {
+            "id": "r2-p2-a5",
+            "text": "NPC",
+            "matchesQuestionId": "r2-p2-q5"
+          },
+          {
+            "id": "r2-p2-fake",
+            "text": "Glow up",
+            "matchesQuestionId": null
+          }
+        ]
+      },
+      {
+        "playerOrder": 3,
+        "questions": [
+          {
+            "id": "r2-p3-q1",
+            "text": "¿Qué nombre recibe la bebida efervescente elaborada a base de té fermentado?"
+          },
+          {
+            "id": "r2-p3-q2",
+            "text": "¿Cómo se llama el polvo fino de té verde japonés muy popular para hacer lattes?"
+          },
+          {
+            "id": "r2-p3-q3",
+            "text": "¿Qué baya morada brasileña se usa para preparar famosos bowls de desayuno?"
+          },
+          {
+            "id": "r2-p3-q4",
+            "text": "¿Cómo se llaman las vainas de soja hervidas típicas de los restaurantes japoneses?"
+          },
+          {
+            "id": "r2-p3-q5",
+            "text": "¿Qué marca española de carne vegetal se hizo famosa por sus bocados que imitan al pollo?"
+          }
+        ],
+        "answers": [
+          {
+            "id": "r2-p3-a1",
+            "text": "Kombucha",
+            "matchesQuestionId": "r2-p3-q1"
+          },
+          {
+            "id": "r2-p3-a2",
+            "text": "Matcha",
+            "matchesQuestionId": "r2-p3-q2"
+          },
+          {
+            "id": "r2-p3-a3",
+            "text": "Açai",
+            "matchesQuestionId": "r2-p3-q3"
+          },
+          {
+            "id": "r2-p3-a4",
+            "text": "Edamame",
+            "matchesQuestionId": "r2-p3-q4"
+          },
+          {
+            "id": "r2-p3-a5",
+            "text": "Heura",
+            "matchesQuestionId": "r2-p3-q5"
+          },
+          {
+            "id": "r2-p3-fake",
+            "text": "Sriracha",
+            "matchesQuestionId": null
+          }
+        ]
+      },
+      {
+        "playerOrder": 4,
+        "questions": [
+          {
+            "id": "r2-p4-q1",
+            "text": "¿En qué simulador de vida virtual puedes ahogar a tus personajes quitando la escalerilla de la piscina?"
+          },
+          {
+            "id": "r2-p4-q2",
+            "text": "¿En qué juego de Nintendo vives pagando una hipoteca eterna al mapache Tom Nook?"
+          },
+          {
+            "id": "r2-p4-q3",
+            "text": "¿Qué juego de carreras rompe amistades al lanzar un temido caparazón azul?"
+          },
+          {
+            "id": "r2-p4-q4",
+            "text": "¿Qué exitoso Battle Royale te permite construir paredes de madera y hacer bailes virales?"
+          },
+          {
+            "id": "r2-p4-q5",
+            "text": "¿Qué competitivo juego de ordenador enfrenta a cinco contra cinco en la Grieta del Invocador?"
+          }
+        ],
+        "answers": [
+          {
+            "id": "r2-p4-a1",
+            "text": "Los Sims",
+            "matchesQuestionId": "r2-p4-q1"
+          },
+          {
+            "id": "r2-p4-a2",
+            "text": "Animal Crossing",
+            "matchesQuestionId": "r2-p4-q2"
+          },
+          {
+            "id": "r2-p4-a3",
+            "text": "Mario Kart",
+            "matchesQuestionId": "r2-p4-q3"
+          },
+          {
+            "id": "r2-p4-a4",
+            "text": "Fortnite",
+            "matchesQuestionId": "r2-p4-q4"
+          },
+          {
+            "id": "r2-p4-a5",
+            "text": "League of Legends",
+            "matchesQuestionId": "r2-p4-q5"
+          },
+          {
+            "id": "r2-p4-fake",
+            "text": "EA Sports FC",
+            "matchesQuestionId": null
+          }
+        ]
+      },
+      {
+        "playerOrder": 5,
+        "questions": [
+          {
+            "id": "r2-p5-q1",
+            "text": "¿Qué mítico festival de rock y rap se celebra en Villarrobledo, Albacete?"
+          },
+          {
+            "id": "r2-p5-q2",
+            "text": "¿Qué festival de Aranda de Duero celebra conciertos sorpresa en la Plaza del Trigo?"
+          },
+          {
+            "id": "r2-p5-q3",
+            "text": "¿Qué gran festival de Barcelona es famoso mundialmente por la música alternativa e independiente?"
+          },
+          {
+            "id": "r2-p5-q4",
+            "text": "¿En qué festival de Burriana miles de 'sounders' acampan pegados a la playa?"
+          },
+          {
+            "id": "r2-p5-q5",
+            "text": "¿Qué festival de música urbana y reguetón nacido en Asturias se ha expandido por toda España?"
+          }
+        ],
+        "answers": [
+          {
+            "id": "r2-p5-a1",
+            "text": "Viña Rock",
+            "matchesQuestionId": "r2-p5-q1"
+          },
+          {
+            "id": "r2-p5-a2",
+            "text": "Sonorama",
+            "matchesQuestionId": "r2-p5-q2"
+          },
+          {
+            "id": "r2-p5-a3",
+            "text": "Primavera Sound",
+            "matchesQuestionId": "r2-p5-q3"
+          },
+          {
+            "id": "r2-p5-a4",
+            "text": "Arenal Sound",
+            "matchesQuestionId": "r2-p5-q4"
+          },
+          {
+            "id": "r2-p5-a5",
+            "text": "Boombastic",
+            "matchesQuestionId": "r2-p5-q5"
+          },
+          {
+            "id": "r2-p5-fake",
+            "text": "Mad Cool",
+            "matchesQuestionId": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "round": 3,
+    "topics": [
+      {
+        "id": "cultura_internet",
+        "name": "Cultura de Internet y Virales Viejunos",
+        "questions": [
+          {
+            "id": "r3-t1-001",
+            "text": "¿Qué chuchería mencionaba el joven Ares en su viral control de alcoholemia con el 'Pim, pam, toma...'?",
+            "answer": "Lacasitos"
+          },
+          {
+            "id": "r3-t1-002",
+            "text": "¿Qué comida de carne celebraba Miquel Montoro en su vídeo gritando '¡Hòstia, ______!'?",
+            "answer": "Pilotes (Pelotas de carne / albóndigas)."
+          },
+          {
+            "id": "r3-t1-003",
+            "text": "¿En qué reality de Cuatro se hizo famosa Dakota con la frase 'De la cárcel se sale, pero del cementerio no'?",
+            "answer": "Hermano Mayor"
+          },
+          {
+            "id": "r3-t1-004",
+            "text": "¿De qué ciudad era la vecina que se hizo viral peleando en el rellano por una bolsa de basura?",
+            "answer": "Valencia"
+          },
+          {
+            "id": "r3-t1-005",
+            "text": "¿Cómo se llamaban las hermanas virales que enseñaban el 'baptisterio romano del siglo primero'?",
+            "answer": "Encarnita y Josefina"
+          }
+        ]
+      },
+      {
+        "id": "magia_fantasia",
+        "name": "Magia y Fantasía de nuestra adolescencia",
+        "questions": [
+          {
+            "id": "r3-t2-001",
+            "text": "¿Cómo se llama el ogro de DreamWorks que se enamora de la princesa Fiona?",
+            "answer": "Shrek"
+          },
+          {
+            "id": "r3-t2-002",
+            "text": "'Es Leviósa, no Leviosá'. ¿Cuál es el hechizo exacto que Hermione usa para levitar una pluma?",
+            "answer": "Wingardium Leviosa"
+          },
+          {
+            "id": "r3-t2-003",
+            "text": "En Crepúsculo, ¿cómo se llama el joven de la tribu Quileute que se transforma en hombre lobo?",
+            "answer": "Jacob Black (Se acepta Jacob)."
+          },
+          {
+            "id": "r3-t2-004",
+            "text": "¿Cómo se llama el león que crea y protege el mundo mágico en Las Crónicas de Narnia?",
+            "answer": "Aslan"
+          },
+          {
+            "id": "r3-t2-005",
+            "text": "En El Señor de los Anillos, ¿cómo se llama la gigantesca araña que ataca a Frodo?",
+            "answer": "Ella-Laraña (o Shelob en inglés)."
+          }
+        ]
+      },
+      {
+        "id": "playlists",
+        "name": "Playlists: De la radio al club",
+        "questions": [
+          {
+            "id": "r3-t3-001",
+            "text": "¿Qué artista de 'Motomami' popularizó el gesto de mascar chicle antes de cantar Bizcochito?",
+            "answer": "Rosalía"
+          },
+          {
+            "id": "r3-t3-002",
+            "text": "¿Qué productor argentino con gafas y gorra llama a sus colaboraciones 'Music Sessions'?",
+            "answer": "Bizarrap (o BZRP)."
+          },
+          {
+            "id": "r3-t3-003",
+            "text": "¿Qué título de ciudad lleva el exitoso disco que C. Tangana lanzó en 2021?",
+            "answer": "El Madrileño"
+          },
+          {
+            "id": "r3-t3-004",
+            "text": "¿Qué dúo de rap madrileño es famoso por su serie de canciones 'Barras Bravas'?",
+            "answer": "Natos y Waor"
+          },
+          {
+            "id": "r3-t3-005",
+            "text": "¿Qué mítico grupo fundado por Yung Beef, Kaydy Cain y Khaled fue pionero del trap en España?",
+            "answer": "Pxxr Gvng (Se pronuncia Poor Gang / Los Pobres)."
+          }
+        ]
+      },
+      {
+        "id": "sobremesas_tdt",
+        "name": "Sobremesas y Series de la TDT",
+        "questions": [
+          {
+            "id": "r3-t4-001",
+            "text": "¿Qué serie narraba las locas aventuras de los vecinos de Desengaño 21?",
+            "answer": "Aquí no hay quien viva"
+          },
+          {
+            "id": "r3-t4-002",
+            "text": "En Los Simpson, ¿cómo se llama la cerveza que Homer bebe en el bar de Moe?",
+            "answer": "Duff"
+          },
+          {
+            "id": "r3-t4-003",
+            "text": "¿Cómo se llamaba el bar que regentaba Mauricio Colmenero en la serie Aída?",
+            "answer": "Bar Reinols (Se acepta Reinols)."
+          },
+          {
+            "id": "r3-t4-004",
+            "text": "¿Cómo se llamaba el instituto de los protagonistas de la serie Física o Química?",
+            "answer": "El Zurbarán"
+          },
+          {
+            "id": "r3-t4-005",
+            "text": "¿Cómo se llamaba el grupo de música adolescente formado en la serie Los Serrano?",
+            "answer": "SJK (Santa Justa Klan)."
+          }
+        ]
+      },
+      {
+        "id": "recreo_2000",
+        "name": "El Recreo de los 2000",
+        "questions": [
+          {
+            "id": "r3-t5-001",
+            "text": "¿Cómo se llamaba la mascota virtual con forma de huevo a la que tenías que cuidar para que no muriera?",
+            "answer": "Tamagotchi"
+          },
+          {
+            "id": "r3-t5-002",
+            "text": "¿Cómo se llamaban los discos coleccionables de las bolsas de patatas con los que jugábamos a voltearlos?",
+            "answer": "Tazos"
+          },
+          {
+            "id": "r3-t5-003",
+            "text": "¿Qué peonzas de combate hacíamos chocar en los patios simulando su anime?",
+            "answer": "Beyblade"
+          },
+          {
+            "id": "r3-t5-004",
+            "text": "¿Cómo se llamaban las famosas zapatillas con ruedas ocultas en el talón?",
+            "answer": "Heelys"
+          },
+          {
+            "id": "r3-t5-005",
+            "text": "¿Cómo se llamaban las figuritas de monstruos divididas por tribus que arrasaban en los kioscos?",
+            "answer": "Gormiti"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "round": 4,
+    "questions": [
+      {
+        "id": "r4-001",
+        "text": "¿Para qué intervención médica dolorosa inventaron dos médicos escoceses el primer prototipo de la motosierra?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Amputaciones",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "Partos",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "id": "r4-002",
+        "text": "¿Qué fruta alquilaban por horas los nobles ingleses del siglo XVIII para pasearla en fiestas como símbolo de riqueza?",
+        "options": [
+          {
+            "id": "a",
+            "text": "La piña",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "El coco",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-003",
+        "text": "¿Qué 'pecaminoso' hábito querían evitar los cereales Corn Flakes originales al ser creados como un alimento soso?",
+        "options": [
+          {
+            "id": "a",
+            "text": "La masturbación",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "El acné",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-004",
+        "text": "Pese a su lentitud, ¿qué mamífero terrestre aguanta la respiración bajo el agua mucho más que un delfín?",
+        "options": [
+          {
+            "id": "a",
+            "text": "El perezoso",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "El koala",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-005",
+        "text": "En el Antiguo Egipto, cuando el gato de una familia fallecía, ¿qué se afeitaban sus dueños en señal de luto?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Las cejas",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "La cabeza",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-006",
+        "text": "Entre 1912 y 1948, los Juegos Olímpicos entregaban medallas en una disciplina sin esfuerzo físico. ¿Cuál?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Pintura",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Ajedrez",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-007",
+        "text": "A finales del siglo XIX, Bayer vendía un jarabe para calmar la tos de los niños. ¿Qué droga contenía?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Cocaína",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "Heroína",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "id": "r4-008",
+        "text": "¿Qué animal tiene huellas dactilares tan parecidas a las humanas que han llegado a confundir a la policía?",
+        "options": [
+          {
+            "id": "a",
+            "text": "El chimpancé",
+            "isCorrect": false
+          },
+          {
+            "id": "b",
+            "text": "El koala",
+            "isCorrect": true
+          }
+        ]
+      },
+      {
+        "id": "r4-009",
+        "text": "¿Qué objeto cotidiano causa más muertes al año al caerse sobre las personas que los ataques de tiburón?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Máquinas expendedoras",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Ventiladores",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-010",
+        "text": "En la Persia del siglo X, ¿para quiénes se inventaron los zapatos de tacón alto para montar a caballo?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Hombres",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Mujeres",
+            "isCorrect": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "round": 5,
+    "questions": [
+      {
+        "id": "r5-001",
+        "text": "¿Cómo se llamaba el primer mamífero clonado con éxito a partir de una célula adulta en 1996?",
+        "answer": "La oveja Dolly (Se acepta Dolly)."
+      },
+      {
+        "id": "r5-002",
+        "text": "En 'El diablo viste de Prada', ¿cómo se llama la implacable directora interpretada por Meryl Streep?",
+        "answer": "Miranda Priestly (Se acepta Miranda)."
+      },
+      {
+        "id": "r5-003",
+        "text": "¿Cuál es la capital de Islandia, famosa por sus aguas termales y auroras boreales?",
+        "answer": "Reikiavik"
+      },
+      {
+        "id": "r5-004",
+        "text": "¿Cómo se llamaba el programa de chat de Microsoft donde enviábamos 'zumbidos' antes de WhatsApp?",
+        "answer": "MSN Messenger (Se acepta Messenger)."
+      },
+      {
+        "id": "r5-005",
+        "text": "¿Qué pintor es el autor de las 'Pinturas Negras' y de 'Saturno devorando a su hijo'?",
+        "answer": "Francisco de Goya (Se acepta Goya)."
+      },
+      {
+        "id": "r5-006",
+        "text": "En 2006, la comunidad científica degradó a Plutón. ¿A qué categoría astronómica pasó a pertenecer?",
+        "answer": "Planeta enano"
+      },
+      {
+        "id": "r5-007",
+        "text": "En 'Los Juegos del Hambre', ¿cómo se llama el país ficticio gobernado por el Capitolio?",
+        "answer": "Panem"
+      },
+      {
+        "id": "r5-008",
+        "text": "¿Qué programa del gatito con auriculares revolucionó las descargas de MP3 en 1999?",
+        "answer": "Napster"
+      },
+      {
+        "id": "r5-009",
+        "text": "¿Cómo se llama el joven estadounidense que fundó la red social Tuenti?",
+        "answer": "Zaryn Dentzel"
+      },
+      {
+        "id": "r5-010",
+        "text": "¿Cuál es el único hueso del cuerpo humano (situado en el cuello) que no está unido a ningún otro hueso?",
+        "answer": "El hueso hioides (Se acepta hioides)."
+      },
+      {
+        "id": "r5-011",
+        "text": "¿En qué exclusiva isla de la Polinesia Francesa es clásico alojarse en bungalows sobre el agua?",
+        "answer": "Bora Bora"
+      },
+      {
+        "id": "r5-012",
+        "text": "¿Qué componente de One Direction nació en la República de Irlanda y no en Reino Unido?",
+        "answer": "Niall Horan"
+      },
+      {
+        "id": "r5-013",
+        "text": "¿Qué marca de sopas de sobre popularizó el eslogan 'Cueces o enriqueces'?",
+        "answer": "Gallina Blanca"
+      },
+      {
+        "id": "r5-014",
+        "text": "El Espinar pertenece a la Arquitectura Negra. ¿A qué municipio de Guadalajara con nombre de anfibio pertenece?",
+        "answer": "Campillo de Ranas"
+      },
+      {
+        "id": "r5-015",
+        "text": "¿Qué técnica inglesa tiñe camisetas con nudos para lograr un patrón hippie?",
+        "answer": "Tie-dye."
+      }
+    ]
+  },
+  {
+    "round": 6,
+    "name": "El Minuto Final (El Bote)",
+    "topics": [
+      {
+        "id": "r6-t1",
+        "name": "Viajes",
+        "question": {
+          "id": "r6-001",
+          "text": "¿En qué exclusiva isla de la Polinesia Francesa es clásico alojarse en bungalows sobre el agua?",
+          "answer": "Bora Bora."
+        }
+      },
+      {
+        "id": "r6-t2",
+        "name": "One Direction",
+        "question": {
+          "id": "r6-002",
+          "text": "¿Qué miembro original de One Direction nació en la República de Irlanda?",
+          "answer": "Niall Horan."
+        }
+      },
+      {
+        "id": "r6-t3",
+        "name": "Sopas",
+        "question": {
+          "id": "r6-003",
+          "text": "¿Qué marca española de caldos popularizó el eslogan 'Cueces o enriqueces'?",
+          "answer": "Gallina Blanca."
+        }
+      },
+      {
+        "id": "r6-t4",
+        "name": "Pueblos",
+        "question": {
+          "id": "r6-004",
+          "text": "El Espinar es pedanía de la Arquitectura Negra. ¿A qué municipio de Guadalajara con nombre de anfibio pertenece?",
+          "answer": "Campillo de Ranas."
+        }
+      },
+      {
+        "id": "r6-t5",
+        "name": "Manualidades",
+        "question": {
+          "id": "r6-005",
+          "text": "¿Qué técnica inglesa consiste en teñir camisetas haciendo nudos para lograr un patrón hippie?",
+          "answer": "Tie-dye."
+        }
+      }
+    ]
+  }
+]

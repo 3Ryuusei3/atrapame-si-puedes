@@ -1,0 +1,9 @@
+{
+  "showName": "Atrapame si puedes",
+  "round1TimerSeconds": 45,
+  "round4TargetCorrect": 5,
+  "round5TargetCorrect": 5,
+  "round2Points": [50, 40, 30, 20, 10],
+  "round6TimerSeconds": 60,
+  "round6BotePerTopic": 100
+}

@@ -1,0 +1,45 @@
+{
+  "round": 3,
+  "topics": [
+    {
+      "id": "historia",
+      "name": "Historia",
+      "questions": [
+        { "id": "r3-h-001", "text": "¿En qué año cayó el Muro de Berlín?", "answer": "1989" },
+        { "id": "r3-h-002", "text": "¿Quién fue el primer presidente de EE.UU.?", "answer": "George Washington" }
+      ]
+    },
+    {
+      "id": "ciencia",
+      "name": "Ciencia",
+      "questions": [
+        { "id": "r3-c-001", "text": "¿Cuál es la velocidad de la luz aproximada?", "answer": "300.000 km/s" },
+        { "id": "r3-c-002", "text": "¿Cuántos huesos tiene el cuerpo humano adulto?", "answer": "206" }
+      ]
+    },
+    {
+      "id": "deportes",
+      "name": "Deportes",
+      "questions": [
+        { "id": "r3-d-001", "text": "¿Cuántos jugadores tiene un equipo de fútbol en campo?", "answer": "11" },
+        { "id": "r3-d-002", "text": "¿En qué deporte se usa la raqueta y volante?", "answer": "Bádminton" }
+      ]
+    },
+    {
+      "id": "cine",
+      "name": "Cine",
+      "questions": [
+        { "id": "r3-ci-001", "text": "¿Quién dirigió Titanic?", "answer": "James Cameron" },
+        { "id": "r3-ci-002", "text": "¿Qué película ganó el Oscar 2020?", "answer": "Parásitos" }
+      ]
+    },
+    {
+      "id": "musica",
+      "name": "Música",
+      "questions": [
+        { "id": "r3-m-001", "text": "¿Quién compuso las Cuatro Estaciones?", "answer": "Vivaldi" },
+        { "id": "r3-m-002", "text": "¿De qué país es originario el reggae?", "answer": "Jamaica" }
+      ]
+    }
+  ]
+}

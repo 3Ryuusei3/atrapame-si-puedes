@@ -1,0 +1,35 @@
+{
+  "round": 1,
+  "sets": [
+    {
+      "playerOrder": 1,
+      "questions": [
+        {
+          "id": "r1-001",
+          "text": "¿Cuál es la capital de Francia?",
+          "answer": "París"
+        },
+        {
+          "id": "r1-002",
+          "text": "¿Cuántos continentes hay en el mundo?",
+          "answer": "7"
+        },
+        {
+          "id": "r1-003",
+          "text": "¿Quién pintó la Mona Lisa?",
+          "answer": "Leonardo da Vinci"
+        },
+        {
+          "id": "r1-004",
+          "text": "¿En qué año llegó el hombre a la Luna?",
+          "answer": "1969"
+        },
+        {
+          "id": "r1-005",
+          "text": "¿Cuál es el símbolo químico del oro?",
+          "answer": "Au"
+        }
+      ]
+    }
+  ]
+}

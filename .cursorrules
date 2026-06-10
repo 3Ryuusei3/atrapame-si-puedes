@@ -1,0 +1,31 @@
+Actúa como Desarrollador Full-Stack y Diseñador de Arquitectura de Software.
+
+## Proyecto: Atrapame si puedes
+
+Aplicación de presentador para un concurso de TV de 6 rondas y 5 jugadores.
+
+### Documentación
+
+Las reglas completas del juego están en `docs/GDD.md`. Síguelas estrictamente.
+
+### Stack
+
+- React + Vite + TypeScript
+- Tailwind CSS + shadcn/ui
+- Zustand (estado local, sin backend)
+- react-router-dom
+
+### Principios
+
+- Lógica de juego en `src/engine/` (funciones puras).
+- Estado en `src/store/gameStore.ts`.
+- Preguntas en `src/data/questions/data.json` + `config.json`.
+
+### Reglas resumidas
+
+- R1: Cooperativa, bote +50/acierto, timer 60s, pregunta oculta hasta iniciar timer.
+- R2: Matching 1 pregunta + 6 respuestas, resumen previo, confirmación al cambiar.
+- R3: Duelos por ranking, botones marciales, puntos 10/20/30… por pregunta.
+- R4: Parejas 1º+3º vs 2º+4º, vista previa, 5 círculos de aciertos.
+- R5: Escalera 1-2-3-4-5-4-3-2-1, meta en peldaño 5.
+- R6: Bote del ganador, 5 temas, 60s, 1 pregunta por tema.

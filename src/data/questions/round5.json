@@ -1,0 +1,20 @@
+{
+  "round": 5,
+  "questions": [
+    {
+      "id": "r5-001",
+      "text": "¿Quién escribió Cien años de soledad?",
+      "answer": "Gabriel García Márquez"
+    },
+    {
+      "id": "r5-002",
+      "text": "¿Cuál es el río más largo del mundo?",
+      "answer": "Nilo / Amazonas"
+    },
+    {
+      "id": "r5-003",
+      "text": "¿En qué año llegó el hombre a la Luna?",
+      "answer": "1969"
+    }
+  ]
+}
