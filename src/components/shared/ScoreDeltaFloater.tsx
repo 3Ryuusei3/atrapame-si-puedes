@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { gameGreenText, gameRedText } from "@/lib/gameColors";
 
 interface ScoreDeltaFloaterProps {
   challengerName: string;
@@ -45,7 +46,7 @@ function DeltaBadge({
       <span
         className={cn(
           "animate-score-delta text-4xl font-bold drop-shadow-lg",
-          delta > 0 ? "text-emerald-400" : "text-destructive",
+          delta > 0 ? gameGreenText : gameRedText,
         )}
       >
         {delta > 0 ? `+${delta}` : delta}

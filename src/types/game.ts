@@ -11,9 +11,17 @@ export type GamePhase =
 
 export type PlayerOrder = 1 | 2 | 3 | 4 | 5;
 
+export type PlayerAvatarId =
+  | "amarillo"
+  | "rojo"
+  | "azul"
+  | "verde"
+  | "morado";
+
 export interface Player {
   id: string;
   name: string;
+  avatarId: PlayerAvatarId;
   score: number;
   isActive: boolean;
   order: PlayerOrder;
@@ -32,8 +40,11 @@ export interface Round1State {
   turnWrong: number;
 }
 
+export type Round2Mode = "matching" | "songs";
+
 export interface Round2State {
   subPhase: "intro" | "playing";
+  mode: Round2Mode;
   currentPlayerIndex: number;
   questionStep: number;
   visibleAnswerIds: string[];
@@ -47,6 +58,8 @@ export interface Round3DuelStartScores {
   challenged: number;
 }
 
+export type Round3DuelQuestionResult = "correct" | "wrong";
+
 export interface Round3State {
   subPhase: "intro" | "selecting" | "dueling" | "duelSummary" | "finalSummary";
   duelIndex: number;
@@ -54,6 +67,8 @@ export interface Round3State {
   challengedId: string | null;
   selectedTopicId: string | null;
   questionIndex: number;
+  /** Resultado del retado por pregunta del duelo actual (acierto/fallo). */
+  duelQuestionResults: Round3DuelQuestionResult[];
   usedTopicIds: string[];
   challengerQueue: string[];
   duelStartScores: Round3DuelStartScores | null;
@@ -62,23 +77,26 @@ export interface Round3State {
 export type TeamId = "A" | "B";
 
 export interface Round4State {
-  subPhase: "preview" | "playing";
+  subPhase: "preview" | "playing" | "summary";
   teamACorrect: number;
   teamBCorrect: number;
   activeTeam: TeamId;
   questionIndex: number;
   teamAPlayerIds: [string, string];
   teamBPlayerIds: [string, string];
+  winningTeam: TeamId | null;
 }
 
 /** Escalón actual por jugador: 0 = inicio (debajo del 1), 5 = meta. */
 export interface Round5State {
+  subPhase: "playing" | "summary";
   finalistAId: string;
   finalistBId: string;
   stepIndexA: number;
   stepIndexB: number;
   activePlayerId: string;
   questionIndex: number;
+  winnerPlayerId: string | null;
 }
 
 export interface Round6State {

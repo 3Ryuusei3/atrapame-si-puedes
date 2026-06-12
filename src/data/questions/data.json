@@ -565,28 +565,28 @@
         "questions": [
           {
             "id": "r3-t3-001",
-            "text": "¿Qué artista de 'Motomami' popularizó el gesto de mascar chicle antes de cantar Bizcochito?",
+            "text": "¿Qué artista popularizó el gesto de mascar chicle antes de cantar Bizcochito?",
             "answer": "Rosalía"
           },
           {
             "id": "r3-t3-002",
-            "text": "¿Qué productor argentino con gafas y gorra llama a sus colaboraciones 'Music Sessions'?",
-            "answer": "Bizarrap (o BZRP)."
+            "text": "¿Qué ex-miembro de Auryn ha tenido la mejor carrera en solitario?",
+            "answer": "Dani Fernández"
           },
           {
             "id": "r3-t3-003",
-            "text": "¿Qué título de ciudad lleva el exitoso disco que C. Tangana lanzó en 2021?",
+            "text": "¿Qué gentilicio de ciudad lleva el exitoso disco que C. Tangana lanzó en 2021?",
             "answer": "El Madrileño"
           },
           {
             "id": "r3-t3-004",
-            "text": "¿Qué dúo de rap madrileño es famoso por su serie de canciones 'Barras Bravas'?",
-            "answer": "Natos y Waor"
+            "text": "¿Qué artista colaboró con Lola Índigo en la canción La Tirita?",
+            "answer": "Belén Aguilera"
           },
           {
             "id": "r3-t3-005",
-            "text": "¿Qué mítico grupo fundado por Yung Beef, Kaydy Cain y Khaled fue pionero del trap en España?",
-            "answer": "Pxxr Gvng (Se pronuncia Poor Gang / Los Pobres)."
+            "text": "¿Qué dúo de rap madrileño es famoso por su serie de canciones 'Barras Bravas'?",
+            "answer": "Natos y Waor"
           }
         ]
       },
@@ -606,18 +606,18 @@
           },
           {
             "id": "r3-t4-003",
-            "text": "¿Cómo se llamaba el bar que regentaba Mauricio Colmenero en la serie Aída?",
-            "answer": "Bar Reinols (Se acepta Reinols)."
-          },
-          {
-            "id": "r3-t4-004",
             "text": "¿Cómo se llamaba el instituto de los protagonistas de la serie Física o Química?",
             "answer": "El Zurbarán"
           },
           {
-            "id": "r3-t4-005",
+            "id": "r3-t4-004",
             "text": "¿Cómo se llamaba el grupo de música adolescente formado en la serie Los Serrano?",
             "answer": "SJK (Santa Justa Klan)."
+          },
+          {
+            "id": "r3-t4-005",
+            "text": "¿Cómo se llamaba el bar que regentaba Mauricio Colmenero en la serie Aída?",
+            "answer": "Bar Reinols (Se acepta Reinols)."
           }
         ]
       },
@@ -691,7 +691,7 @@
       },
       {
         "id": "r4-003",
-        "text": "¿Qué 'pecaminoso' hábito querían evitar los cereales Corn Flakes originales al ser creados como un alimento soso?",
+        "text": "¿Qué hábito querían evitar los cereales Corn Flakes originales al ser creados como un alimento soso?",
         "options": [
           {
             "id": "a",
@@ -700,7 +700,7 @@
           },
           {
             "id": "b",
-            "text": "El acné",
+            "text": "Fumar",
             "isCorrect": false
           }
         ]
@@ -787,7 +787,7 @@
       },
       {
         "id": "r4-009",
-        "text": "¿Qué objeto cotidiano causa más muertes al año al caerse sobre las personas que los ataques de tiburón?",
+        "text": "¿Qué objeto causa más muertes al año al caerse sobre las personas que los ataques de tiburón?",
         "options": [
           {
             "id": "a",
@@ -813,6 +813,326 @@
           {
             "id": "b",
             "text": "Mujeres",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-011",
+        "text": "¿Qué animal mitológico es, sorprendentemente, el animal nacional oficial de Escocia?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Unicornio",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Dragón",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-012",
+        "text": "¿De qué inusual color es la leche que producen los hipopótamos hembra para sus crías?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Rosa",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Azul",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-013",
+        "text": "Antes de los despertadores, los 'avisadores' disparaban algo a las ventanas para despertar a la gente. ¿El qué?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Guisantes secos",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Garbanzos",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-014",
+        "text": "¿Qué popular salsa para hamburguesas se vendía en las farmacias de 1830 como cura para la indigestión?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Kétchup",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Mostaza",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-015",
+        "text": "¿En qué icónico envase de supermercado reposan por deseo propio las cenizas del inventor de las patatas Pringles?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Lata cilíndrica",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Bolsa hermética",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-016",
+        "text": "En 1932, el ejército australiano envió ametralladoras para luchar en una 'guerra' contra un ave. ¿Cuál?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Emú",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Avestruz",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-017",
+        "text": "¿Qué forma geométrica perfecta tienen las curiosas heces de los wombats australianos para marcar territorio?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Cubo",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Esfera",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-018",
+        "text": "Tras su muerte, ¿en qué objeto de plástico fue convertido el inventor del frisbee usando sus propias cenizas?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Un frisbee",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Un boomerang",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-019",
+        "text": "¿Para qué objeto clásico se inventó originalmente el diminuto bolsillo delantero de los pantalones vaqueros?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Reloj de bolsillo",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Monedas",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-020",
+        "text": "Por la rígida estructura de su cuello, ¿qué animal de granja es físicamente incapaz de mirar hacia el cielo?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Cerdo",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Vaca",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-021",
+        "text": "¿Con qué parte de su cuerpo saborean la comida las mariposas al posarse sobre las flores?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Las patas",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Las antenas",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-022",
+        "text": "¿Qué simpáticos animales marinos duermen dados de la mano para no separarse por la corriente del agua?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Nutrias",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Focas",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-023",
+        "text": "¿Qué dulce y milenario alimento natural es el único del mundo que no caduca ni se pudre jamás?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Miel",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Azúcar",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-024",
+        "text": "Anatómicamente hablando, ¿cuántos corazones necesita un pulpo en su interior para bombear toda su sangre?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Tres",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Dos",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-025",
+        "text": "En 2008, la Guardia Real Noruega nombró 'Caballero' oficial a un animal del zoo. ¿Qué era?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Pingüino",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Oso polar",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-026",
+        "text": "¿A qué animales implantó la CIA estadounidense micrófonos en los 60 para intentar espiar a los soviéticos?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Gatos",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Palomas",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-027",
+        "text": "¿Qué enorme dulce típico de las ferias fue, irónicamente, inventado por un dentista en 1897?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Algodón de azúcar",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Manzana caramelizada",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-028",
+        "text": "Según los astronautas de la NASA que realizan caminatas espaciales, ¿a qué huele el polvo del espacio exterior?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Carne asada",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Ropa limpia",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-029",
+        "text": "¿Mediante qué sonora acción corporal se comunican en la oscuridad los inmensos bancos de arenques?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Flatulencias",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Eructos",
+            "isCorrect": false
+          }
+        ]
+      },
+      {
+        "id": "r4-030",
+        "text": "Durante la Segunda Guerra Mundial, ante el bloqueo que impedía importar sirope de cola, ¿qué refresco inventó Alemania?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Fanta",
+            "isCorrect": true
+          },
+          {
+            "id": "b",
+            "text": "Sprite",
             "isCorrect": false
           }
         ]
@@ -889,7 +1209,7 @@
       },
       {
         "id": "r5-014",
-        "text": "El Espinar pertenece a la Arquitectura Negra. ¿A qué municipio de Guadalajara con nombre de anfibio pertenece?",
+        "text": "El Espinar pertenece a la Arquitectura Negra. ¿A qué municipio de Guadalajara pertenece?",
         "answer": "Campillo de Ranas"
       },
       {
@@ -901,7 +1221,7 @@
   },
   {
     "round": 6,
-    "name": "El Minuto Final (El Bote)",
+    "name": "Ronda Final Especial Marta",
     "topics": [
       {
         "id": "r6-t1",
@@ -935,7 +1255,7 @@
         "name": "Pueblos",
         "question": {
           "id": "r6-004",
-          "text": "El Espinar es pedanía de la Arquitectura Negra. ¿A qué municipio de Guadalajara con nombre de anfibio pertenece?",
+          "text": "El Espinar es pedanía de la Arquitectura Negra. ¿A qué municipio de Guadalajara pertenece?",
           "answer": "Campillo de Ranas."
         }
       },

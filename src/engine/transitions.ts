@@ -17,11 +17,15 @@ import {
   getChallengerQueue,
   getPlayersByScoreRank,
 } from "./scoring";
+import { resolveRound6PlayerId } from "./round2Marta";
+import type { PlayerSetupEntry } from "@/data/playerAvatars";
+import { formatPlayerName } from "@/lib/utils";
 
-export function createInitialPlayers(names: string[]): Player[] {
-  return names.map((name, i) => ({
+export function createInitialPlayers(entries: PlayerSetupEntry[]): Player[] {
+  return entries.map((entry, i) => ({
     id: `p${i + 1}`,
-    name: name.trim() || `Jugador ${i + 1}`,
+    name: formatPlayerName(entry.name) || `JUGADOR ${i + 1}`,
+    avatarId: entry.avatarId,
     score: 0,
     isActive: true,
     order: (i + 1) as Player["order"],
@@ -46,6 +50,7 @@ export function createRound1State(config: GameConfig): Round1State {
 export function createRound2State(): Round2State {
   return {
     subPhase: "intro",
+    mode: "matching",
     currentPlayerIndex: 0,
     questionStep: 1,
     visibleAnswerIds: [],
@@ -64,6 +69,7 @@ export function createRound3State(players: Player[]): Round3State {
     challengedId: null,
     selectedTopicId: null,
     questionIndex: 0,
+    duelQuestionResults: [],
     usedTopicIds: [],
     challengerQueue: queue,
     duelStartScores: null,
@@ -91,18 +97,21 @@ export function createRound4State(players: Player[]): Round4State {
     questionIndex: 0,
     teamAPlayerIds: teams.teamA,
     teamBPlayerIds: teams.teamB,
+    winningTeam: null,
   };
 }
 
 export function createRound5State(players: Player[]): Round5State {
   const ranked = getPlayersByScoreRank(players);
   return {
+    subPhase: "playing",
     finalistAId: ranked[0].id,
     finalistBId: ranked[1].id,
     stepIndexA: 0,
     stepIndexB: 0,
     activePlayerId: ranked[0].id,
     questionIndex: 0,
+    winnerPlayerId: null,
   };
 }
 
@@ -214,26 +223,16 @@ export function transitionToRound5(
 }
 
 export function transitionToRound6(
-  _state: GameState,
+  state: GameState,
   winnerId: string,
   config: GameConfig,
 ): Partial<GameState> {
+  const playerId = resolveRound6PlayerId(state.players, winnerId);
   return {
     phase: "round6",
     currentRound: 6,
-    winnerId,
-    roundState: createRound6State(winnerId, config),
-  };
-}
-
-export function transitionToFinished(
-  winnerId: string,
-  boteEarned: number,
-): Partial<GameState> {
-  return {
-    phase: "finished",
-    winnerId,
-    boteGlobal: boteEarned,
+    winnerId: playerId,
+    roundState: createRound6State(playerId, config),
   };
 }
 
@@ -276,11 +275,12 @@ export function jumpToRound(
     case 6: {
       const winner = getPlayersByScoreRank(state.players)[0];
       if (!winner) return {};
+      const playerId = resolveRound6PlayerId(state.players, winner.id);
       return {
         phase: "round6",
         currentRound: 6,
-        winnerId: winner.id,
-        roundState: createRound6State(winner.id, config),
+        winnerId: playerId,
+        roundState: createRound6State(playerId, config),
       };
     }
   }
@@ -294,7 +294,7 @@ export function getPhaseLabel(phase: GamePhase): string {
     round3: "Ronda 3 — Duelos",
     round4: "Ronda 4 — Parejas",
     round5: "Ronda 5 — La Final",
-    round6: "Ronda 6 — El Bote",
+    round6: "Ronda Final Especial Marta",
     tiebreaker: "Desempate — Piedra/Papel/Tijera",
     finished: "Ganador",
   };

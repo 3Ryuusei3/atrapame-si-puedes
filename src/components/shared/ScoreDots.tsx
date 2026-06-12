@@ -1,4 +1,8 @@
 import { cn } from "@/lib/utils";
+import {
+  gameGreenFill,
+  gameYellowFill,
+} from "@/lib/gameColors";
 
 interface ScoreDotsProps {
   correct: number;
@@ -18,23 +22,26 @@ export function ScoreDots({
   return (
     <div className={cn("flex flex-col items-center gap-2", className)}>
       {label && (
-        <p className="text-muted-foreground text-sm font-medium">{label}</p>
+        <p className="text-sm font-bold text-white/70">{label}</p>
       )}
       <div className="flex items-center gap-3">
         {Array.from({ length: target }, (_, i) => {
-          const lit = i < correct;
+          const scored = i < correct;
+          const isNext = active && i === correct && correct < target;
+
           return (
             <div
               key={i}
               className={cn(
-                "flex size-12 items-center justify-center rounded-full border-2 text-lg font-bold transition-all",
-                lit
-                  ? "border-primary bg-primary text-primary-foreground shadow-[0_0_12px_rgba(212,168,83,0.5)]"
-                  : "border-muted-foreground/30 bg-secondary/30 text-muted-foreground",
-                active && lit && "scale-110",
+                "flex size-14 items-center justify-center rounded-full border-2 text-lg font-black transition-all md:size-16 md:text-xl",
+                scored && gameGreenFill,
+                isNext && gameYellowFill,
+                !scored &&
+                  !isNext &&
+                  "border-[#00AEEF]/50 bg-white/90 text-black/70",
               )}
             >
-              {lit ? i + 1 : ""}
+              {i + 1}
             </div>
           );
         })}

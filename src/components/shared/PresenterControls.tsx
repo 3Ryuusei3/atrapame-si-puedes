@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { TvPresenterDock } from "@/components/tv/TvPresenterDock";
 
 interface PresenterControlsProps {
   onReveal?: () => void;
@@ -41,47 +42,61 @@ export function PresenterControls({
   if (!hasReveal && !showVerdict && !showNext && !showExtra) return null;
 
   return (
-    <div className="bg-card flex flex-wrap items-center justify-center gap-3 rounded-xl border p-4">
-      {hasReveal && (
-        <Button
-          variant="outline"
-          size="xl"
-          onClick={onReveal}
-          disabled={disabled}
-        >
-          {revealed ? hideRevealLabel : revealLabel}
-        </Button>
-      )}
-      {showVerdict && onCorrect && (
-        <Button
-          variant="success"
-          size="xl"
-          onClick={onCorrect}
-          disabled={disabled}
-        >
-          {correctLabel}
-        </Button>
-      )}
-      {showVerdict && onWrong && (
-        <Button
-          variant="destructive"
-          size="xl"
-          onClick={onWrong}
-          disabled={disabled}
-        >
-          {wrongLabel}
-        </Button>
-      )}
-      {showNext && onNext && (
-        <Button variant="outline" size="lg" onClick={onNext} disabled={disabled}>
-          {nextLabel}
-        </Button>
-      )}
-      {showExtra && onExtra && (
-        <Button variant="secondary" size="lg" onClick={onExtra} disabled={disabled}>
-          {extraLabel}
-        </Button>
-      )}
-    </div>
+    <TvPresenterDock>
+      <div className="flex flex-wrap items-center justify-center gap-2">
+        {hasReveal && (
+          <Button
+            variant="outline"
+            size="lg"
+            onClick={onReveal}
+            disabled={disabled}
+            className="border-[#00AEEF]/50 bg-[#0a1e4a] text-white hover:bg-[#00AEEF]/20"
+          >
+            {revealed ? hideRevealLabel : revealLabel}
+          </Button>
+        )}
+        {showVerdict && onCorrect && (
+          <Button
+            variant="success"
+            size="lg"
+            onClick={onCorrect}
+            disabled={disabled}
+          >
+            {correctLabel}
+          </Button>
+        )}
+        {showVerdict && onWrong && (
+          <Button
+            variant="destructive"
+            size="lg"
+            onClick={onWrong}
+            disabled={disabled}
+          >
+            {wrongLabel}
+          </Button>
+        )}
+        {showNext && onNext && (
+          <Button
+            variant="outline"
+            size="lg"
+            onClick={onNext}
+            disabled={disabled}
+            className="border-white/30 bg-transparent text-white hover:bg-white/10"
+          >
+            {nextLabel}
+          </Button>
+        )}
+        {showExtra && onExtra && (
+          <Button
+            variant="secondary"
+            size="lg"
+            onClick={onExtra}
+            disabled={disabled}
+          >
+            {extraLabel}
+          </Button>
+        )}
+      </div>
+    </TvPresenterDock>
   );
 }

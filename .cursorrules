@@ -1,6 +1,6 @@
 Actúa como Desarrollador Full-Stack y Diseñador de Arquitectura de Software.
 
-## Proyecto: Atrapame si puedes
+## Proyecto: Atrápame si puedes
 
 Aplicación de presentador para un concurso de TV de 6 rondas y 5 jugadores.
 
@@ -21,11 +21,38 @@ Las reglas completas del juego están en `docs/GDD.md`. Síguelas estrictamente.
 - Estado en `src/store/gameStore.ts`.
 - Preguntas en `src/data/questions/data.json` + `config.json`.
 
+### Global
+
+- Menú **Opciones** en cabecera: saltar a ronda 1–6, reiniciar partida.
+- Marcador lateral visible en R1–R3; **oculto** en R4–R6.
+- Atajos: `A` acierto, `F` fallo (R1, R3 duelo, R5, R6); `Espacio` timer (R1,
+  R6).
+
 ### Reglas resumidas
 
-- R1: Cooperativa, bote +50/acierto, timer 60s, pregunta oculta hasta iniciar timer.
-- R2: Matching 1 pregunta + 6 respuestas, resumen previo, confirmación al cambiar.
-- R3: Duelos por ranking, botones marciales, puntos 10/20/30… por pregunta.
-- R4: Parejas 1º+3º vs 2º+4º, vista previa, 5 círculos de aciertos.
-- R5: Escalera 1-2-3-4-5-4-3-2-1, meta en peldaño 5.
-- R6: Bote del ganador, 5 temas, 60s, 1 pregunta por tema.
+- **R1**: Cooperativa por turnos. Sets por jugador (1–7 preguntas). Timer
+  **45s**, +50 bote/acierto. Pregunta oculta hasta iniciar timer. Revelar pausa;
+  acierto/fallo reanuda y avanza. Resumen al fin de cada turno.
+- **R2**: Resumen intro. Matching 1 pregunta + 6 respuestas barajadas. Acierto:
+  verde, suma puntos, avanza. Fallo: rojo, **avanza** pregunta. Puntos
+  50/40/30/20/10. Confirmación al cambiar jugador.
+- **R3**: Resumen intro. 5 duelos por ranking, botones marciales. Puntos
+  10/20/30… Retado acierta/falla transfiere puntos. Resumen por duelo y final.
+  Elimina al último; empate → RPS.
+- **R4**: 1º+3º vs 2º+4º. Vista previa. Opciones binarias **barajadas**, clic
+  con feedback. 5 círculos de aciertos. **Resumen** antes de R5.
+- **R5**: Final 1v1. Escalera horizontal `0-1-2-3-4-5-4-3-2-1-0` (A izq., B
+  der.). Inicio sin recuadro (solo nombre). Peldaños alcanzados en verde.
+  Peldaño 5 sin «Meta». **Resumen** antes de R6.
+- **R6**: Bote del ganador R5. 60s. 5 temas (`topics[]` con `name` +
+  `question`). 5 cajas; solo tema activo muestra pregunta. **Bucle** de temas
+  hasta tiempo o 5 aciertos; fallos reintentables. Revelar pausa;
+  acierto/fallo/siguiente reanuda. Resumen final: **confeti** si
+  `boteEarned > 0`, **💩** si no.
+
+### Datos JSON
+
+- R1/R2: `sets[]` por `playerOrder`.
+- R3: `topics[]` con `questions[]`.
+- R4/R5: `questions[]`.
+- R6: `topics[]` con `question` (objeto único, 5 temas exactos).

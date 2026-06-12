@@ -9,6 +9,11 @@ export function formatScore(score: number): string {
   return score.toLocaleString("es-ES");
 }
 
+/** Nombre de concursante: siempre mayúsculas. */
+export function formatPlayerName(name: string): string {
+  return name.trim().toLocaleUpperCase("es-ES");
+}
+
 /** Fisher–Yates shuffle (no muta el array original). */
 export function shuffle<T>(items: T[]): T[] {
   const copy = [...items];

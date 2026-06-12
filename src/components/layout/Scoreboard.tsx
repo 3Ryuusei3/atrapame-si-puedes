@@ -1,9 +1,9 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { resolveAvatarId } from "@/data/playerAvatars";
+import { PlayerAvatar } from "@/components/shared/PlayerAvatar";
+import { TvScoreBox } from "@/components/tv/TvScoreBox";
 import { ScoreDots } from "@/components/shared/ScoreDots";
 import { questions } from "@/data/questions";
-import { formatScore } from "@/lib/utils";
+import { formatScore, cn } from "@/lib/utils";
 import { useGameStore } from "@/store/gameStore";
 import type { Round4State, Round5State, Round6State } from "@/types/game";
 
@@ -21,98 +21,115 @@ export function Scoreboard() {
   const r6 = isRound6 ? (roundState as Round6State) : null;
 
   const getPlayer = (id: string) => players.find((p) => p.id === id);
+  const rankedPlayers = [...players].sort(
+    (a, b) => b.score - a.score || a.order - b.order,
+  );
   const target4 = questions.config.round4TargetCorrect;
 
+  const formatTeam = (ids: string[]) =>
+    ids.map((id) => getPlayer(id)?.name ?? "?").join(" + ");
+
   return (
-    <Card className="h-full">
-      <CardHeader className="pb-3">
-        <CardTitle className="text-lg">Marcador</CardTitle>
-      </CardHeader>
-      <CardContent className="flex flex-col gap-3">
+    <div className="flex h-full min-h-0 flex-col rounded-xl border-3 border-[#00AEEF]/50 bg-[#0a1e4a]/90 p-4 shadow-lg backdrop-blur-sm">
+      <h2 className="mb-3 text-center text-sm font-black tracking-widest text-[#00AEEF] uppercase">
+        Marcador
+      </h2>
+
+      <div className="flex flex-col gap-3">
         {phase === "round1" && (
-          <div className="bg-primary/10 rounded-lg p-4 text-center">
-            <p className="text-muted-foreground text-xs uppercase tracking-wider">
-              Bote Global
-            </p>
-            <p className="text-primary text-3xl font-bold">
-              {formatScore(boteGlobal)}
-            </p>
+          <div className="flex justify-center">
+            <TvScoreBox
+              value={formatScore(boteGlobal)}
+              label="Bote global"
+              size="lg"
+            />
           </div>
         )}
 
         {isRound4 && r4 && r4.subPhase === "playing" && (
           <>
             <ScoreDots
-              label={`Pareja A: ${r4.teamAPlayerIds.map((id) => getPlayer(id)?.name ?? "?").join(" + ")}`}
+              label={`Pareja A: ${formatTeam(r4.teamAPlayerIds)}`}
               correct={r4.teamACorrect}
               target={target4}
               active={r4.activeTeam === "A"}
             />
             <ScoreDots
-              label={`Pareja B: ${r4.teamBPlayerIds.map((id) => getPlayer(id)?.name ?? "?").join(" + ")}`}
+              label={`Pareja B: ${formatTeam(r4.teamBPlayerIds)}`}
               correct={r4.teamBCorrect}
               target={target4}
               active={r4.activeTeam === "B"}
             />
-            <Separator />
+            <div className="h-px bg-[#00AEEF]/30" />
           </>
         )}
 
         {isRound5 && r5 && (
           <>
-            <div className="flex justify-between text-sm">
-              <span>{getPlayer(r5.finalistAId)?.name}</span>
-              <span className="text-primary font-bold">
-                Escalón {r5.stepIndexA === 0 ? "inicio" : r5.stepIndexA}
-              </span>
-            </div>
-            <div className="flex justify-between text-sm">
-              <span>{getPlayer(r5.finalistBId)?.name}</span>
-              <span className="text-primary font-bold">
-                Escalón {r5.stepIndexB === 0 ? "inicio" : r5.stepIndexB}
-              </span>
-            </div>
-            <Separator />
+            {[r5.finalistAId, r5.finalistBId].map((id) => {
+              const player = getPlayer(id);
+              if (!player) return null;
+              const step =
+                id === r5.finalistAId ? r5.stepIndexA : r5.stepIndexB;
+
+              return (
+                <div
+                  key={id}
+                  className="flex items-center justify-between gap-2 text-sm font-bold text-white"
+                >
+                  <div className="flex min-w-0 items-center gap-2">
+                    <PlayerAvatar
+                      avatarId={resolveAvatarId(player)}
+                      size="sm"
+                    />
+                    <span className="truncate">{player.name}</span>
+                  </div>
+                  <span className="shrink-0 text-[#FFD700]">
+                    Escalón {step === 0 ? "inicio" : step}
+                  </span>
+                </div>
+              );
+            })}
+            <div className="h-px bg-[#00AEEF]/30" />
           </>
         )}
 
         {isRound6 && r6 && (
-          <div className="bg-primary/10 rounded-lg p-4 text-center">
-            <p className="text-muted-foreground text-xs uppercase tracking-wider">
-              Bote en juego
-            </p>
-            <p className="text-primary text-2xl font-bold">
-              {formatScore(r6.boteEarned)} pts
-            </p>
-            <p className="text-muted-foreground mt-1 text-xs">
-              {r6.completedTopicIds.length}/5 temas acertados
-            </p>
+          <div className="flex justify-center">
+            <TvScoreBox
+              value={formatScore(r6.boteEarned)}
+              label="Bote en juego"
+              size="md"
+            />
           </div>
         )}
 
-        <div className="flex flex-col gap-2">
-          {players.map((p) => (
+        <div className="flex flex-col gap-1.5">
+          {rankedPlayers.map((p) => (
             <div
               key={p.id}
-              className={`flex items-center justify-between rounded-lg px-3 py-2 ${
-                !p.isActive ? "opacity-40 line-through" : "bg-secondary/50"
-              }`}
+              className={cn(
+                "flex items-center justify-between rounded-lg px-3 py-2",
+                !p.isActive
+                  ? "opacity-40 line-through"
+                  : "bg-[#00AEEF]/10 border border-[#00AEEF]/20",
+              )}
             >
-              <div className="flex items-center gap-2">
-                <Badge variant="outline" className="text-xs">
-                  J{p.order}
-                </Badge>
-                <span className="font-medium">{p.name}</span>
+              <div className="flex min-w-0 items-center gap-2">
+                <PlayerAvatar avatarId={resolveAvatarId(p)} size="sm" />
+                <span className="truncate text-sm font-bold text-white">
+                  {p.name}
+                </span>
               </div>
               {phase !== "round5" && phase !== "round6" && (
-                <span className="text-primary font-mono font-semibold">
+                <span className="font-black text-[#FFD700] tabular-nums">
                   {formatScore(p.score)}
                 </span>
               )}
             </div>
           ))}
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }

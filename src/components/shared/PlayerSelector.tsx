@@ -5,6 +5,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { PlayerAvatar } from "@/components/shared/PlayerAvatar";
+import { resolveAvatarId } from "@/data/playerAvatars";
 import type { Player } from "@/types/game";
 
 interface PlayerSelectorProps {
@@ -42,7 +44,10 @@ export function PlayerSelector({
               value={p.id}
               disabled={disabledIds.includes(p.id)}
             >
-              J{p.order} — {p.name}
+              <span className="flex items-center gap-2">
+                <PlayerAvatar avatarId={resolveAvatarId(p)} size="xs" />
+                J{p.order} — {p.name}
+              </span>
             </SelectItem>
           ))}
         </SelectContent>

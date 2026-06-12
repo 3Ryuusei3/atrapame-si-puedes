@@ -1,6 +1,6 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { PlayerAvatar } from "@/components/shared/PlayerAvatar";
+import { resolveAvatarId } from "@/data/playerAvatars";
 import { cn, formatScore } from "@/lib/utils";
 import type { Player } from "@/types/game";
 
@@ -13,6 +13,7 @@ interface RoundSummaryProps {
   totalLabel?: string;
   totalValue?: number;
   highlightPlayerId?: string;
+  highlightPlayerIds?: string[];
   highlightLabel?: string;
   onContinue: () => void;
   continueLabel?: string;
@@ -27,65 +28,77 @@ export function RoundSummary({
   totalLabel = "Puntuación total",
   totalValue = 0,
   highlightPlayerId,
+  highlightPlayerIds,
   highlightLabel = "Eliminado",
   onContinue,
   continueLabel = "Comenzar ronda",
 }: RoundSummaryProps) {
+  const highlightedIds = highlightPlayerIds ?? (
+    highlightPlayerId ? [highlightPlayerId] : []
+  );
+
   const ranked = [...players]
     .filter((p) => p.isActive)
     .sort((a, b) => b.score - a.score || a.order - b.order);
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center gap-6 py-8">
+    <div className="flex h-full min-h-0 flex-col items-center justify-center gap-6 overflow-y-auto px-4 py-6">
       <div className="text-center">
-        <h2 className="text-primary text-3xl font-bold">{title}</h2>
+        <h2 className="text-3xl font-black text-[#FFD700] uppercase">{title}</h2>
         {subtitle && (
-          <p className="text-muted-foreground mt-2">{subtitle}</p>
+          <p className="mt-2 text-sm font-semibold text-white/70">{subtitle}</p>
         )}
       </div>
 
-      <Card className="w-full max-w-lg">
-        <CardHeader>
-          <CardTitle className="text-center">Resumen de puntuaciones</CardTitle>
-        </CardHeader>
-        <CardContent className="flex flex-col gap-2">
+      <div className="w-full max-w-lg rounded-xl border-3 border-[#00AEEF]/50 bg-[#0a1e4a]/90 p-6 shadow-lg">
+        <h3 className="mb-4 text-center text-sm font-black tracking-widest text-[#00AEEF] uppercase">
+          Resumen de puntuaciones
+        </h3>
+        <div className="flex flex-col gap-2">
           {ranked.map((p, i) => (
             <div
               key={p.id}
               className={cn(
-                "bg-secondary/40 flex items-center justify-between rounded-lg px-4 py-3",
-                p.id === highlightPlayerId &&
-                  "border-destructive/50 bg-destructive/10 border",
+                "flex items-center justify-between rounded-lg border border-[#00AEEF]/20 bg-[#00AEEF]/10 px-4 py-3",
+                highlightedIds.includes(p.id) &&
+                  "border-red-500/50 bg-red-500/15",
               )}
             >
               <div className="flex items-center gap-3">
                 {showPositions && (
-                  <span className="text-primary w-8 font-bold">{i + 1}º</span>
+                  <span className="w-8 font-black text-[#FFD700]">{i + 1}º</span>
                 )}
-                <span className="font-medium">
+                <PlayerAvatar avatarId={resolveAvatarId(p)} size="sm" />
+                <span className="font-bold text-white">
                   J{p.order} — {p.name}
                 </span>
-                {p.id === highlightPlayerId && (
-                  <Badge variant="destructive">{highlightLabel}</Badge>
+                {highlightedIds.includes(p.id) && (
+                  <span className="rounded bg-red-500 px-2 py-0.5 text-xs font-black text-white uppercase">
+                    {highlightLabel}
+                  </span>
                 )}
               </div>
-              <span className="text-primary font-mono font-semibold">
+              <span className="font-black text-[#FFD700] tabular-nums">
                 {formatScore(p.score)} pts
               </span>
             </div>
           ))}
           {showTotal && (
-            <div className="border-primary/30 mt-2 flex items-center justify-between rounded-lg border px-4 py-3">
-              <span className="font-semibold">{totalLabel}</span>
-              <span className="text-primary text-xl font-bold">
+            <div className="mt-2 flex items-center justify-between rounded-lg border-3 border-[#FFD700]/40 bg-[#FFD700]/10 px-4 py-3">
+              <span className="font-bold text-white">{totalLabel}</span>
+              <span className="text-xl font-black text-[#FFD700]">
                 {formatScore(totalValue)} pts
               </span>
             </div>
           )}
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
-      <Button size="lg" onClick={onContinue}>
+      <Button
+        size="lg"
+        onClick={onContinue}
+        className="border-3 border-[#FFD700] bg-[#FFD700] font-black text-black hover:bg-[#ffe033]"
+      >
         {continueLabel}
       </Button>
     </div>

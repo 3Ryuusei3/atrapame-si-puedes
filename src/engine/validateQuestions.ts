@@ -70,7 +70,10 @@ export function validateQuestions(data: AllQuestions): ValidationError[] {
   }
 
   if (!data.round5.questions.length) {
-    errors.push({ file: "data.json", message: "Ronda 5: al menos 1 pregunta." });
+    errors.push({
+      file: "data.json",
+      message: "Ronda 5: al menos 1 pregunta.",
+    });
   }
 
   if (data.round6.topics.length !== 5) {
@@ -100,10 +103,10 @@ export function validateQuestions(data: AllQuestions): ValidationError[] {
 
 export function logValidationErrors(errors: ValidationError[]): void {
   if (errors.length === 0) {
-    console.info("[Atrapame] Preguntas validadas correctamente.");
+    console.info("[Atrápame] Preguntas validadas correctamente.");
     return;
   }
-  console.warn("[Atrapame] Errores de validación:");
+  console.warn("[Atrápame] Errores de validación:");
   for (const err of errors) {
     console.warn(`  - ${err.file}: ${err.message}`);
   }

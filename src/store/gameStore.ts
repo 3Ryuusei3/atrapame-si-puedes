@@ -12,6 +12,11 @@ import {
   ROUND1_MAX_QUESTIONS_PER_PLAYER,
   getRound1QuestionCount,
 } from "@/engine/round1";
+import { getMartaAlbumIds, isMartaPlayer } from "@/engine/round2Marta";
+import { ROUND2_MARTA_SONGS } from "@/data/round2MartaSongs";
+import {
+  finishRound4IfQuestionsExhausted,
+} from "@/engine/round4";
 import {
   checkRound3End,
   createInitialPlayers,
@@ -20,7 +25,6 @@ import {
   jumpToRound,
   transitionAfterRound3,
   transitionAfterTiebreaker,
-  transitionToFinished,
   transitionToRound2,
   transitionToRound3,
   transitionToRound5,
@@ -40,9 +44,10 @@ import type {
   TiebreakerState,
 } from "@/types/game";
 import { ROUND5_WIN_STEP } from "@/types/game";
+import type { PlayerSetupEntry } from "@/data/playerAvatars";
 
 interface GameActions {
-  startGame: (names: string[]) => void;
+  startGame: (entries: PlayerSetupEntry[]) => void;
   resetGame: () => void;
   jumpToRound: (round: 1 | 2 | 3 | 4 | 5 | 6) => void;
 
@@ -68,6 +73,7 @@ interface GameActions {
   round3StartPlaying: () => void;
   round3SetChallenged: (id: string) => void;
   round3SetTopic: (topicId: string) => void;
+  round3ConfirmDuel: () => void;
   round3Correct: () => void;
   round3Wrong: () => void;
   round3ContinueAfterDuel: () => void;
@@ -81,11 +87,14 @@ interface GameActions {
   round4Correct: () => void;
   round4Wrong: () => void;
   round4NextQuestion: () => void;
+  round4PreviousQuestion: () => void;
+  round4ContinueFromSummary: () => void;
 
   // Round 5
   round5Correct: () => void;
   round5Wrong: () => void;
   round5NextQuestion: () => void;
+  round5ContinueFromSummary: () => void;
 
   // Round 6
   round6StartTimer: () => void;
@@ -95,7 +104,6 @@ interface GameActions {
   round6Wrong: () => void;
   round6NextTopic: () => void;
   round6Finish: () => void;
-  round6ContinueFromSummary: () => void;
 }
 
 type GameStore = GameState & GameActions;
@@ -169,7 +177,12 @@ function tryEnterRound3Dueling(
 ): Round3State {
   if (!rs.challengerId || !rs.challengedId || !rs.selectedTopicId) {
     if (rs.subPhase === "dueling") {
-      return { ...rs, subPhase: "selecting", duelStartScores: null };
+      return {
+        ...rs,
+        subPhase: "selecting",
+        duelStartScores: null,
+        duelQuestionResults: [],
+      };
     }
     return rs;
   }
@@ -180,6 +193,7 @@ function tryEnterRound3Dueling(
     ...rs,
     subPhase: "dueling",
     questionIndex: 0,
+    duelQuestionResults: [],
     duelStartScores: {
       challenger: challenger.score,
       challenged: challenged.score,
@@ -272,10 +286,10 @@ export const useGameStore = create<GameStore>()(
     (set, get) => ({
       ...initialState,
 
-      startGame: (names) => {
+      startGame: (entries) => {
         set({
           phase: "round1",
-          players: createInitialPlayers(names),
+          players: createInitialPlayers(entries),
           boteGlobal: 0,
           currentRound: 1,
           roundState: createRound1State(questions.config),
@@ -430,7 +444,25 @@ export const useGameStore = create<GameStore>()(
       initRound2Player: () => {
         const { roundState, phase, players } = get();
         if (phase !== "round2" || !isRound2(roundState)) return;
-        const playerOrder = players[roundState.currentPlayerIndex]?.order ?? 1;
+        const player = players[roundState.currentPlayerIndex];
+        const playerOrder = player?.order ?? 1;
+
+        if (player && isMartaPlayer(player.name)) {
+          const albumIds = getMartaAlbumIds();
+          set({
+            roundState: {
+              ...roundState,
+              mode: "songs",
+              questionStep: 1,
+              visibleAnswerIds: albumIds,
+              shuffledAnswerIds: shuffle(albumIds),
+              matchedQuestionIds: [],
+              selectedAnswerId: null,
+            },
+          });
+          return;
+        }
+
         const setData = questions.round2.sets.find(
           (s) => s.playerOrder === playerOrder,
         );
@@ -438,6 +470,7 @@ export const useGameStore = create<GameStore>()(
         set({
           roundState: {
             ...roundState,
+            mode: "matching",
             questionStep: 1,
             visibleAnswerIds: setData.answers.map((a) => a.id),
             shuffledAnswerIds: shuffle(setData.answers.map((a) => a.id)),
@@ -459,16 +492,25 @@ export const useGameStore = create<GameStore>()(
         const { roundState, phase, players } = get();
         if (phase !== "round2" || !isRound2(roundState)) return;
         const player = players[roundState.currentPlayerIndex];
-        if (!player) return;
+        if (!player || !roundState.selectedAnswerId) return;
 
-        const playerOrder = player.order;
-        const setData = questions.round2.sets.find(
-          (s) => s.playerOrder === playerOrder,
-        );
-        if (!setData) return;
+        let currentQuestionId: string | undefined;
 
-        const currentQ = setData.questions[roundState.questionStep - 1];
-        if (!currentQ || !roundState.selectedAnswerId) return;
+        if (roundState.mode === "songs") {
+          if (!isMartaPlayer(player.name)) return;
+          currentQuestionId =
+            ROUND2_MARTA_SONGS[roundState.questionStep - 1]?.id;
+        } else if (roundState.mode === "matching") {
+          const setData = questions.round2.sets.find(
+            (s) => s.playerOrder === player.order,
+          );
+          currentQuestionId =
+            setData?.questions[roundState.questionStep - 1]?.id;
+        } else {
+          return;
+        }
+
+        if (!currentQuestionId) return;
 
         let newPlayers = players;
         let newVisible = [...roundState.visibleAnswerIds];
@@ -481,7 +523,7 @@ export const useGameStore = create<GameStore>()(
           newVisible = newVisible.filter(
             (id) => id !== roundState.selectedAnswerId,
           );
-          newMatched = [...newMatched, currentQ.id];
+          newMatched = [...newMatched, currentQuestionId];
           newStep = roundState.questionStep + 1;
         } else {
           newStep = roundState.questionStep + 1;
@@ -532,26 +574,30 @@ export const useGameStore = create<GameStore>()(
       },
 
       round3SetChallenged: (id) => {
-        const { roundState, phase, players } = get();
+        const { roundState, phase } = get();
         if (phase !== "round3" || !isRound3(roundState)) return;
         if (roundState.subPhase !== "selecting") return;
         set({
-          roundState: tryEnterRound3Dueling(
-            { ...roundState, challengedId: id },
-            players,
-          ),
+          roundState: { ...roundState, challengedId: id },
         });
       },
 
       round3SetTopic: (topicId) => {
-        const { roundState, phase, players } = get();
+        const { roundState, phase } = get();
         if (phase !== "round3" || !isRound3(roundState)) return;
         if (roundState.subPhase !== "selecting") return;
         set({
-          roundState: tryEnterRound3Dueling(
-            { ...roundState, selectedTopicId: topicId, questionIndex: 0 },
-            players,
-          ),
+          roundState: { ...roundState, selectedTopicId: topicId },
+        });
+      },
+
+      round3ConfirmDuel: () => {
+        const { roundState, phase, players } = get();
+        if (phase !== "round3" || !isRound3(roundState)) return;
+        if (roundState.subPhase !== "selecting") return;
+        if (!roundState.challengedId || !roundState.selectedTopicId) return;
+        set({
+          roundState: tryEnterRound3Dueling(roundState, players),
         });
       },
 
@@ -566,6 +612,10 @@ export const useGameStore = create<GameStore>()(
         if (!topic) return;
         const pts = getDuelQuestionPoints(roundState.questionIndex);
         const isLast = roundState.questionIndex >= topic.questions.length - 1;
+        const newResults: Round3State["duelQuestionResults"] = [
+          ...roundState.duelQuestionResults,
+          "correct",
+        ];
         const newPlayers = transferPoints(
           players,
           roundState.challengerId,
@@ -575,8 +625,12 @@ export const useGameStore = create<GameStore>()(
         set({
           players: newPlayers,
           roundState: isLast
-            ? finishRound3Duel(roundState)
-            : { ...roundState, questionIndex: roundState.questionIndex + 1 },
+            ? finishRound3Duel({ ...roundState, duelQuestionResults: newResults })
+            : {
+                ...roundState,
+                questionIndex: roundState.questionIndex + 1,
+                duelQuestionResults: newResults,
+              },
         });
       },
 
@@ -591,6 +645,10 @@ export const useGameStore = create<GameStore>()(
         if (!topic) return;
         const pts = getDuelQuestionPoints(roundState.questionIndex);
         const isLast = roundState.questionIndex >= topic.questions.length - 1;
+        const newResults: Round3State["duelQuestionResults"] = [
+          ...roundState.duelQuestionResults,
+          "wrong",
+        ];
         const newPlayers = transferPoints(
           players,
           roundState.challengedId,
@@ -600,8 +658,12 @@ export const useGameStore = create<GameStore>()(
         set({
           players: newPlayers,
           roundState: isLast
-            ? finishRound3Duel(roundState)
-            : { ...roundState, questionIndex: roundState.questionIndex + 1 },
+            ? finishRound3Duel({ ...roundState, duelQuestionResults: newResults })
+            : {
+                ...roundState,
+                questionIndex: roundState.questionIndex + 1,
+                duelQuestionResults: newResults,
+              },
         });
       },
 
@@ -625,6 +687,7 @@ export const useGameStore = create<GameStore>()(
               challengedId: null,
               selectedTopicId: null,
               questionIndex: 0,
+              duelQuestionResults: [],
               usedTopicIds: usedTopics,
               duelStartScores: null,
             },
@@ -642,6 +705,7 @@ export const useGameStore = create<GameStore>()(
             challengedId: null,
             selectedTopicId: null,
             questionIndex: 0,
+            duelQuestionResults: [],
             usedTopicIds: usedTopics,
             duelStartScores: null,
           },
@@ -676,7 +740,7 @@ export const useGameStore = create<GameStore>()(
       },
 
       round4Correct: () => {
-        const { roundState, phase } = get();
+        const { roundState, phase, players } = get();
         if (phase !== "round4" || !isRound4(roundState)) return;
         const target = questions.config.round4TargetCorrect;
         const key =
@@ -690,36 +754,65 @@ export const useGameStore = create<GameStore>()(
         };
 
         if (newCount >= target) {
-          const loserIds =
-            roundState.activeTeam === "A"
-              ? roundState.teamBPlayerIds
-              : roundState.teamAPlayerIds;
-          set(transitionToRound5(get(), [...loserIds]));
-        } else {
-          set({ roundState: newState });
+          set({
+            roundState: {
+              ...newState,
+              subPhase: "summary",
+              winningTeam: roundState.activeTeam,
+            },
+          });
+          return;
         }
+
+        const finished = finishRound4IfQuestionsExhausted(newState, players);
+        set({ roundState: finished ?? newState });
+      },
+
+      round4ContinueFromSummary: () => {
+        const { roundState, phase } = get();
+        if (phase !== "round4" || !isRound4(roundState)) return;
+        if (roundState.subPhase !== "summary" || !roundState.winningTeam) return;
+        const loserIds =
+          roundState.winningTeam === "A"
+            ? roundState.teamBPlayerIds
+            : roundState.teamAPlayerIds;
+        set(transitionToRound5(get(), [...loserIds]));
       },
 
       round4Wrong: () => {
-        const { roundState, phase } = get();
+        const { roundState, phase, players } = get();
         if (phase !== "round4" || !isRound4(roundState)) return;
-        set({
-          roundState: {
-            ...roundState,
-            activeTeam: roundState.activeTeam === "A" ? "B" : "A",
-            questionIndex: roundState.questionIndex + 1,
-          },
-        });
+        const newState: Round4State = {
+          ...roundState,
+          activeTeam: roundState.activeTeam === "A" ? "B" : "A",
+          questionIndex: roundState.questionIndex + 1,
+        };
+
+        const finished = finishRound4IfQuestionsExhausted(newState, players);
+        set({ roundState: finished ?? newState });
       },
 
       round4NextQuestion: () => {
         const { roundState, phase } = get();
         if (phase !== "round4" || !isRound4(roundState)) return;
+        if (roundState.subPhase !== "playing") return;
         const maxQ = questions.round4.questions.length;
         set({
           roundState: {
             ...roundState,
-            questionIndex: (roundState.questionIndex + 1) % maxQ,
+            questionIndex: Math.min(maxQ - 1, roundState.questionIndex + 1),
+          },
+        });
+      },
+
+      round4PreviousQuestion: () => {
+        const { roundState, phase } = get();
+        if (phase !== "round4" || !isRound4(roundState)) return;
+        if (roundState.subPhase !== "playing") return;
+        set({
+          roundState: {
+            ...roundState,
+            questionIndex: Math.max(0, roundState.questionIndex - 1),
           },
         });
       },
@@ -737,7 +830,15 @@ export const useGameStore = create<GameStore>()(
 
         const winnerStep = isA ? newStepA : newStepB;
         if (winnerStep >= ROUND5_WIN_STEP) {
-          set(transitionToRound6(get(), roundState.activePlayerId, questions.config));
+          set({
+            roundState: {
+              ...roundState,
+              stepIndexA: newStepA,
+              stepIndexB: newStepB,
+              subPhase: "summary",
+              winnerPlayerId: roundState.activePlayerId,
+            },
+          });
         } else {
           set({
             roundState: {
@@ -778,6 +879,15 @@ export const useGameStore = create<GameStore>()(
             questionIndex: (roundState.questionIndex + 1) % maxQ,
           },
         });
+      },
+
+      round5ContinueFromSummary: () => {
+        const { roundState, phase } = get();
+        if (phase !== "round5" || !isRound5(roundState)) return;
+        if (roundState.subPhase !== "summary" || !roundState.winnerPlayerId) return;
+        set(
+          transitionToRound6(get(), roundState.winnerPlayerId, questions.config),
+        );
       },
 
       round6StartTimer: () => {
@@ -874,12 +984,6 @@ export const useGameStore = create<GameStore>()(
         });
       },
 
-      round6ContinueFromSummary: () => {
-        const { roundState, phase } = get();
-        if (phase !== "round6" || !isRound6(roundState)) return;
-        if (roundState.subPhase !== "summary") return;
-        set(transitionToFinished(roundState.playerId, roundState.boteEarned));
-      },
     }),
     {
       name: "atrapame-game",

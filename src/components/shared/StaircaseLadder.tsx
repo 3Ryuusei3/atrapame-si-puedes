@@ -1,10 +1,19 @@
-import {
-  ROUND5_LADDER_PATH,
-  getRound5PositionIndex,
-} from "@/types/game";
+import { ROUND5_LADDER_PATH, getRound5PositionIndex } from "@/types/game";
+import { PlayerAvatar } from "@/components/shared/PlayerAvatar";
 import { cn } from "@/lib/utils";
+import type { PlayerAvatarId } from "@/types/game";
+import {
+  gameGreenLadderPlat,
+  gameGreenLadderStep,
+  gameYellowToken,
+  gameYellowTokenWinner,
+  gameYellowWinPlat,
+  gameYellowWinStep,
+} from "@/lib/gameColors";
 
-const STEP_LIFT_PX = 26;
+const STEP_LIFT_PX = 52;
+const STEP_SIZE = "7rem";
+const STEP_GAP = "0.75rem";
 
 interface StaircaseLadderProps {
   stepIndexA: number;
@@ -14,6 +23,27 @@ interface StaircaseLadderProps {
   activePlayerId: string;
   playerAId: string;
   playerBId: string;
+  avatarIdA: PlayerAvatarId;
+  avatarIdB: PlayerAvatarId;
+  winnerPlayerId?: string | null;
+}
+
+function isAchievedByA(
+  index: number,
+  value: number,
+  stepIndexA: number,
+): boolean {
+  return index >= 1 && index <= 5 && value > 0 && value <= stepIndexA;
+}
+
+function isAchievedByB(
+  index: number,
+  value: number,
+  stepIndexB: number,
+): boolean {
+  if (value <= 0 || value > stepIndexB) return false;
+  if (index === 5) return stepIndexB >= 5;
+  return index >= 6 && index <= 9;
 }
 
 export function StaircaseLadder({
@@ -24,96 +54,174 @@ export function StaircaseLadder({
   activePlayerId,
   playerAId,
   playerBId,
+  avatarIdA,
+  avatarIdB,
+  winnerPlayerId = null,
 }: StaircaseLadderProps) {
   const posA = getRound5PositionIndex("A", stepIndexA);
   const posB = getRound5PositionIndex("B", stepIndexB);
 
   return (
     <div className="w-full overflow-x-auto py-4">
-      <div className="mx-auto flex min-h-[220px] min-w-[640px] max-w-5xl items-end justify-center px-2">
+      <div
+        className="mx-auto flex min-h-[320px] flex-1 items-end justify-center gap-x-3 px-2"
+        style={{
+          minWidth: `calc(${ROUND5_LADDER_PATH.length} * ${STEP_SIZE} + ${ROUND5_LADDER_PATH.length - 1} * ${STEP_GAP})`,
+        }}
+      >
         {ROUND5_LADDER_PATH.map((value, index) => {
           const height = value;
-          const isGoal = value === 5;
+          const isStart = value === 0;
           const playerAHere = posA === index;
           const playerBHere = posB === index;
+          const isWinStep = value === 5 && winnerPlayerId !== null;
+          const achieved =
+            isAchievedByA(index, value, stepIndexA) ||
+            isAchievedByB(index, value, stepIndexB);
+
+          const occupant =
+            !isStart && playerAHere
+              ? {
+                  name: nameA,
+                  avatarId: avatarIdA,
+                  playerId: playerAId,
+                }
+              : !isStart && playerBHere
+                ? {
+                    name: nameB,
+                    avatarId: avatarIdB,
+                    playerId: playerBId,
+                  }
+                : null;
+
+          const showStartA = isStart && playerAHere && stepIndexA === 0;
+          const showStartB = isStart && playerBHere && stepIndexB === 0;
 
           return (
             <div
               key={index}
-              className="flex flex-1 flex-col items-center justify-end"
-              style={{ paddingBottom: height * STEP_LIFT_PX }}
+              className="flex shrink-0 flex-col items-center justify-end"
+              style={{
+                width: STEP_SIZE,
+                paddingBottom: height * STEP_LIFT_PX,
+              }}
             >
-              <div className="mb-2 flex min-h-9 items-end justify-center">
-                {playerAHere && (
-                  <PlayerToken
-                    name={nameA}
-                    active={activePlayerId === playerAId}
-                  />
-                )}
-                {playerBHere && (
-                  <PlayerToken
-                    name={nameB}
-                    active={activePlayerId === playerBId}
-                  />
-                )}
-              </div>
-
-              <div
-                className={cn(
-                  "relative flex w-full max-w-[4.5rem] flex-col items-center",
-                  index > 0 && "before:absolute before:bottom-full before:left-1/2 before:h-3 before:w-0.5 before:-translate-x-1/2 before:bg-muted-foreground/35",
-                )}
-              >
-                <div
-                  className={cn(
-                    "flex w-full items-center justify-center rounded-sm border-2 font-mono font-bold shadow-md",
-                    isGoal
-                      ? "border-primary bg-primary text-primary-foreground h-10 text-lg shadow-[0_0_14px_rgba(212,168,83,0.4)]"
-                      : value === 0
-                        ? "border-muted-foreground/25 bg-secondary/60 text-muted-foreground h-7 text-sm"
-                        : "border-muted-foreground/40 bg-secondary h-8 text-base",
-                  )}
-                >
-                  {value}
-                </div>
-                <div
-                  className={cn(
-                    "mt-0.5 h-1.5 w-[110%] rounded-b-sm",
-                    isGoal ? "bg-primary/70" : "bg-muted-foreground/30",
-                  )}
+              {showStartA && (
+                <LadderPlayerMarker
+                  name={nameA}
+                  avatarId={avatarIdA}
+                  active={activePlayerId === playerAId}
+                  isWinner={winnerPlayerId === playerAId}
+                  className="translate-x-1 translate-y-3"
                 />
-              </div>
+              )}
+              {showStartB && (
+                <LadderPlayerMarker
+                  name={nameB}
+                  avatarId={avatarIdB}
+                  active={activePlayerId === playerBId}
+                  isWinner={winnerPlayerId === playerBId}
+                  className="-translate-x-1 translate-y-3"
+                />
+              )}
 
-              {isGoal && (
-                <span className="text-primary mt-1 text-[10px] font-semibold uppercase tracking-wider">
-                  Meta
-                </span>
+              {!isStart && (
+                <div className="relative flex w-full flex-col items-center">
+                  <div
+                    className={cn(
+                      "flex aspect-square w-full items-center justify-center rounded-md border-3 shadow-md",
+                      occupant && "overflow-visible bg-transparent p-0",
+                      isWinStep
+                        ? occupant
+                          ? "border-accent bg-transparent"
+                          : gameYellowWinStep
+                        : achieved
+                          ? occupant
+                            ? "border-emerald-400 bg-transparent"
+                            : gameGreenLadderStep
+                          : "border-[#00AEEF]/40 bg-[#0a1e4a]/80",
+                    )}
+                  >
+                    {occupant ? (
+                      <LadderPlayerMarker
+                        name={occupant.name}
+                        avatarId={occupant.avatarId}
+                        active={activePlayerId === occupant.playerId}
+                        isWinner={winnerPlayerId === occupant.playerId}
+                      />
+                    ) : (
+                      <span
+                        className={cn(
+                          "font-mono text-3xl font-black",
+                          !achieved && !isWinStep && "text-white/60",
+                        )}
+                      >
+                        {value}
+                      </span>
+                    )}
+                  </div>
+                  <div
+                    className={cn(
+                      "mt-1.5 h-2.5 w-[110%] rounded-b-sm",
+                      isWinStep
+                        ? gameYellowWinPlat
+                        : achieved
+                          ? gameGreenLadderPlat
+                          : "bg-[#00AEEF]/20",
+                    )}
+                  />
+                </div>
               )}
             </div>
           );
         })}
       </div>
-
-      <div className="text-muted-foreground mt-4 flex justify-between px-4 text-xs font-medium">
-        <span>{nameA} ← desde 0</span>
-        <span>Desde 0 → {nameB}</span>
-      </div>
     </div>
   );
 }
 
-function PlayerToken({ name, active }: { name: string; active: boolean }) {
+function LadderPlayerMarker({
+  name,
+  avatarId,
+  active,
+  isWinner = false,
+  className,
+}: {
+  name: string;
+  avatarId: PlayerAvatarId;
+  active: boolean;
+  isWinner?: boolean;
+  className?: string;
+}) {
   return (
-    <span
+    <div
       className={cn(
-        "max-w-[4.5rem] truncate rounded-full px-2 py-1 text-xs font-semibold",
-        active
-          ? "bg-primary text-primary-foreground ring-primary/60 ring-2"
-          : "bg-secondary text-secondary-foreground",
+        "mb-1 flex max-w-[5.5rem] flex-col items-center gap-1.5",
+        isWinner && "scale-110",
+        className,
       )}
       title={name}
     >
-      {name.split(" ")[0]}
-    </span>
+      <PlayerAvatar
+        avatarId={avatarId}
+        size="lg"
+        className={cn(
+          isWinner && "border-accent shadow-[0_0_16px_rgba(255,215,0,0.7)]",
+          active && !isWinner && "border-accent",
+        )}
+      />
+      <span
+        className={cn(
+          "w-full rounded-md border-2 px-1 py-0.5 text-center text-[10px] leading-tight font-bold uppercase break-words",
+          isWinner
+            ? gameYellowTokenWinner
+            : active
+              ? gameYellowToken
+              : "border-[#00AEEF] bg-white/90 text-black",
+        )}
+      >
+        {name}
+      </span>
+    </div>
   );
 }

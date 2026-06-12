@@ -13,12 +13,14 @@ function GameRoute() {
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<GameSetup />} />
-        <Route path="/game" element={<GameRoute />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="h-full">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<GameSetup />} />
+          <Route path="/game" element={<GameRoute />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
