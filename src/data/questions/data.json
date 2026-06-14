@@ -1194,28 +1194,203 @@
       },
       {
         "id": "r5-011",
-        "text": "¿En qué exclusiva isla de la Polinesia Francesa es clásico alojarse en bungalows sobre el agua?",
-        "answer": "Bora Bora"
+        "text": "¿Cómo se llamaba la cadena de comida rápida de pollo frito de Gus Fring en 'Breaking Bad'?",
+        "answer": "Los Pollos Hermanos"
       },
       {
         "id": "r5-012",
-        "text": "¿Qué componente de One Direction nació en la República de Irlanda y no en Reino Unido?",
-        "answer": "Niall Horan"
+        "text": "¿Cómo se llamaba el mítico juego de cultivar granjas que llenaba de notificaciones nuestro Facebook?",
+        "answer": "FarmVille"
       },
       {
         "id": "r5-013",
-        "text": "¿Qué marca de sopas de sobre popularizó el eslogan 'Cueces o enriqueces'?",
-        "answer": "Gallina Blanca"
+        "text": "¿De qué municipio catalán son originarios los hermanos Muñoz, el dúo Estopa?",
+        "answer": "Cornellà de Llobregat (Se acepta Cornellà)"
       },
       {
         "id": "r5-014",
-        "text": "El Espinar pertenece a la Arquitectura Negra. ¿A qué municipio de Guadalajara pertenece?",
-        "answer": "Campillo de Ranas"
+        "text": "¿En qué barrio de Tokio se encuentra el paso de peatones más famoso y concurrido del mundo?",
+        "answer": "Shibuya"
       },
       {
         "id": "r5-015",
-        "text": "¿Qué técnica inglesa tiñe camisetas con nudos para lograr un patrón hippie?",
-        "answer": "Tie-dye."
+        "text": "En el universo de Harry Potter, ¿cómo se llama la prisión de máxima seguridad custodiada por Dementores?",
+        "answer": "Azkaban"
+      },
+      {
+        "id": "r5-016",
+        "text": "¿De qué dos colores veía la mitad de internet el famoso vestido viral de 2015?",
+        "answer": "Blanco y dorado (o negro y azul)"
+      },
+      {
+        "id": "r5-017",
+        "text": "¿Cómo se llama el compuesto químico que engaña a nuestro cerebro provocando la sensación de picante?",
+        "answer": "La capsaicina"
+      },
+      {
+        "id": "r5-018",
+        "text": "¿Sobre qué superficie específica de tenis es Rafa Nadal el indiscutible rey histórico?",
+        "answer": "Tierra batida (o arcilla)"
+      },
+      {
+        "id": "r5-019",
+        "text": "Antes de la Wikipedia, sus creadores lanzaron una enciclopedia solo para expertos. ¿Cómo se llamaba?",
+        "answer": "Nupedia"
+      },
+      {
+        "id": "r5-020",
+        "text": "¿Cómo se llama el músculo más largo del cuerpo humano, que recorre el muslo en diagonal?",
+        "answer": "El músculo sartorio"
+      },
+      {
+        "id": "r5-021",
+        "text": "¿Qué película de un ogro verde ganó el primer Oscar a la Mejor Película de Animación en 2001?",
+        "answer": "Shrek"
+      },
+      {
+        "id": "r5-022",
+        "text": "¿Cuál es el país más pequeño del mundo, situado en el interior de la ciudad de Roma?",
+        "answer": "Ciudad del Vaticano"
+      },
+      {
+        "id": "r5-023",
+        "text": "Excluyendo al Sol, ¿cuál es el planeta de mayor tamaño de todo nuestro sistema solar?",
+        "answer": "Júpiter"
+      },
+      {
+        "id": "r5-024",
+        "text": "¿Qué famosa cantante colombiana cantó en 2023 aquello de 'las mujeres ya no lloran, las mujeres facturan'?",
+        "answer": "Shakira"
+      },
+      {
+        "id": "r5-025",
+        "text": "¿Cómo se llama la célebre escritora británica que creó el universo mágico de Harry Potter?",
+        "answer": "J. K. Rowling"
+      },
+      {
+        "id": "r5-026",
+        "text": "¿Cómo se llamaba la moneda oficial que circulaba en España justo antes de la entrada del euro?",
+        "answer": "La peseta"
+      },
+      {
+        "id": "r5-027",
+        "text": "¿En qué inmenso museo de París se encuentra expuesto el cuadro original de la Mona Lisa?",
+        "answer": "Museo del Louvre"
+      },
+      {
+        "id": "r5-028",
+        "text": "¿Qué selección nacional masculina de fútbol ganó el Mundial de la FIFA en Qatar 2022?",
+        "answer": "Argentina"
+      },
+      {
+        "id": "r5-029",
+        "text": "Armstrong y Aldrin pisaron la Luna. ¿Qué tercer astronauta del Apolo 11 se quedó orbitando sin bajar?",
+        "answer": "Michael Collins"
+      },
+      {
+        "id": "r5-030",
+        "text": "Desde el hidrógeno hasta el final, ¿qué única letra del abecedario no aparece en la tabla periódica?",
+        "answer": "La letra J"
+      },
+      {
+        "id": "r5-031",
+        "text": "¿Qué premio Nobel de Literatura español publicó en 1948 el libro de viajes 'Viaje a la Alcarria'?",
+        "answer": "Camilo José Cela"
+      },
+      {
+        "id": "r5-032",
+        "text": "La ciudadela de Machu Picchu en Perú es la obra maestra de ¿qué antiguo imperio precolombino?",
+        "answer": "El Imperio Inca"
+      },
+      {
+        "id": "r5-033",
+        "text": "¿Cómo se llama el pigmento biológico que da color a nuestra piel y nos protege del sol?",
+        "answer": "La melanina"
+      },
+      {
+        "id": "r5-034",
+        "text": "¿En qué museo nacional de Madrid podemos admirar el famoso cuadro de 'El Guernica' de Picasso?",
+        "answer": "Museo Reina Sofía"
+      },
+      {
+        "id": "r5-035",
+        "text": "Sídney y Melbourne son muy famosas, pero ¿cuál es la verdadera capital de Australia?",
+        "answer": "Canberra"
+      },
+      {
+        "id": "r5-036",
+        "text": "En la mitología grecorromana, ¿qué musculoso héroe fue castigado a realizar doce trabajos imposibles?",
+        "answer": "Hércules (Se acepta Heracles)"
+      },
+      {
+        "id": "r5-037",
+        "text": "¿De qué ciudad portuaria inglesa surgieron en la década de los 60 The Beatles?",
+        "answer": "Liverpool"
+      },
+      {
+        "id": "r5-038",
+        "text": "¿Cómo se llama el cachalote blanco que el capitán Ahab perseguía en la novela de Herman Melville?",
+        "answer": "Moby Dick"
+      },
+      {
+        "id": "r5-039",
+        "text": "¿Qué brillante científica británica tomó la 'Fotografía 51' clave para descubrir la estructura del ADN?",
+        "answer": "Rosalind Franklin"
+      },
+      {
+        "id": "r5-040",
+        "text": "¿Cuál es el idioma más antiguo de Europa que aún se habla y cuyo origen es un misterio?",
+        "answer": "El euskera (Se acepta vasco o vascuence)"
+      },
+      {
+        "id": "r5-041",
+        "text": "¿Cómo se llama la cascada o caída de agua ininterrumpida más alta del mundo, situada en Venezuela?",
+        "answer": "El Salto del Ángel"
+      },
+      {
+        "id": "r5-042",
+        "text": "El fémur es el más grande. ¿Cómo se llama el diminuto hueso del oído que es el más pequeño del cuerpo?",
+        "answer": "El estribo"
+      },
+      {
+        "id": "r5-043",
+        "text": "¿Qué tercera película de la saga de El Señor de los Anillos ganó 11 premios Oscar en 2004?",
+        "answer": "El retorno del Rey"
+      },
+      {
+        "id": "r5-044",
+        "text": "¿Qué premio Nobel colombiano creó el mágico pueblo de Macondo en 'Cien años de soledad'?",
+        "answer": "Gabriel García Márquez"
+      },
+      {
+        "id": "r5-045",
+        "text": "¿A qué ciudad de la India debes viajar si quieres visitar el famoso mausoleo del Taj Mahal?",
+        "answer": "Agra"
+      },
+      {
+        "id": "r5-046",
+        "text": "¿En qué año exacto Steve Jobs presentó al mundo el primer modelo de iPhone?",
+        "answer": "2007"
+      },
+      {
+        "id": "r5-047",
+        "text": "¿Qué pintor español de excéntrico bigote pintó los relojes derritiéndose en 'La persistencia de la memoria'?",
+        "answer": "Salvador Dalí"
+      },
+      {
+        "id": "r5-048",
+        "text": "¿Qué selección nacional de fútbol masculina ostenta el récord de haber ganado cinco Mundiales?",
+        "answer": "Brasil"
+      },
+      {
+        "id": "r5-049",
+        "text": "En la mitología nórdica, ¿cómo se llama el colosal Árbol del Mundo que sostiene los nueve reinos?",
+        "answer": "Yggdrasil"
+      },
+      {
+        "id": "r5-050",
+        "text": "¿Cómo se llama el enorme lago ruso de Siberia que tiene el récord de ser el más profundo del planeta?",
+        "answer": "El Lago Baikal"
       }
     ]
   },
